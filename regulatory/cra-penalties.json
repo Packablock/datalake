@@ -1,0 +1,174 @@
+{
+  "metadata": {
+    "regulation": "EU Cyber Resilience Act (CRA)",
+    "official_reference": "Regulation (EU) 2024/2847",
+    "jurisdiction": "European Union / EEA",
+    "entry_into_force": "2024-11-20",
+    "reporting_obligations_effective": "2026-05-20",
+    "full_enforcement_date": "2027-11-20",
+    "maintainer": "Packablock Regulatory & Legal Intelligence",
+    "license": "CC-BY-4.0",
+    "last_synced": "2026-09-17T21:48:50.651179+00:00"
+  },
+  "statutory_penalty_tiers": [
+    {
+      "tier": 1,
+      "legal_basis": "CRA Article 53(1)",
+      "title": "Breach of Essential Cybersecurity Requirements & Core Manufacturer Obligations",
+      "scope": "Non-compliance with essential cybersecurity requirements laid down in Annex I (security-by-design, default configurations, vulnerability handling) and manufacturer obligations laid down in Article 13(1)-(20).",
+      "max_fine_eur": 15000000,
+      "max_turnover_pct": 2.5,
+      "formula": "max(15000000, global_annual_turnover * 0.025)",
+      "applicability": "Manufacturers, importers, and distributors of products with digital elements.",
+      "aggravating_factors": [
+        "Duration and gravity of the infringement",
+        "Intentional or negligent character of the breach",
+        "Failure to report actively exploited vulnerabilities within 24 hours",
+        "Number of affected users or devices in the internal market"
+      ],
+      "mitigating_factors": [
+        "Timely and proactive notification to CSIRT / ENISA",
+        "Immediate roll-out of security patches at no cost to users",
+        "Cooperation with market surveillance authorities"
+      ]
+    },
+    {
+      "tier": 2,
+      "legal_basis": "CRA Article 53(2)",
+      "title": "Breach of General Obligations & Reporting Procedures",
+      "scope": "Non-compliance with obligations laid down in Articles 14 (incident reporting), 15, 18, 19, 21, and 23 (importer, distributor, and representative obligations).",
+      "max_fine_eur": 10000000,
+      "max_turnover_pct": 2.0,
+      "formula": "max(10000000, global_annual_turnover * 0.020)",
+      "applicability": "Manufacturers, authorized representatives, importers, distributors.",
+      "aggravating_factors": [
+        "Repeated non-compliance after formal notice",
+        "Failure to maintain technical documentation or SBOM for 10 years"
+      ],
+      "mitigating_factors": [
+        "Voluntary corrective actions",
+        "Early identification and remediation of procedural gaps"
+      ]
+    },
+    {
+      "tier": 3,
+      "legal_basis": "CRA Article 53(3)",
+      "title": "Misleading, Incomplete, or False Information to Regulators",
+      "scope": "Supplying incorrect, incomplete, or misleading information to market surveillance authorities or notified bodies in response to an official request.",
+      "max_fine_eur": 5000000,
+      "max_turnover_pct": 1.0,
+      "formula": "max(5000000, global_annual_turnover * 0.010)",
+      "applicability": "Any economic operator subject to CRA requests.",
+      "aggravating_factors": [
+        "Concealment of known critical vulnerabilities or exploited backdoors"
+      ],
+      "mitigating_factors": [
+        "Prompt rectification of administrative inaccuracies"
+      ]
+    }
+  ],
+  "sme_microenterprise_provisions": {
+    "legal_basis": "CRA Article 53(7)",
+    "summary": "When determining administrative fines for SMEs and microenterprises, market surveillance authorities must take into account their size and economic viability, ensuring fines remain proportionate and non-confiscatory.",
+    "microenterprise_definition": "< 10 employees and <= \u20ac2M annual turnover",
+    "small_enterprise_definition": "< 50 employees and <= \u20ac10M annual turnover",
+    "medium_enterprise_definition": "< 250 employees and <= \u20ac50M annual turnover"
+  },
+  "incident_vulnerability_reporting_timelines": {
+    "legal_basis": "CRA Article 14",
+    "recipient": "CSIRTs network & ENISA Single Reporting Platform",
+    "stages": [
+      {
+        "stage": "Early Warning",
+        "deadline_hours": 24,
+        "trigger": "Becoming aware of an actively exploited vulnerability or severe incident affecting the product with digital elements.",
+        "required_content": "Indication whether the event is suspected of being caused by malicious acts and whether it has international impact."
+      },
+      {
+        "stage": "Vulnerability / Incident Notification",
+        "deadline_hours": 72,
+        "trigger": "Subsequent to early warning.",
+        "required_content": "General description of the vulnerability/incident, initial severity assessment, impacted components, and available mitigations."
+      },
+      {
+        "stage": "Intermediate Follow-up Report",
+        "deadline_days": 14,
+        "trigger": "Upon request of CSIRT or ENISA.",
+        "required_content": "Detailed technical analysis of exploitation status, affected user base, and corrective measures underway."
+      },
+      {
+        "stage": "Final Comprehensive Report",
+        "deadline_days": 30,
+        "trigger": "After resolution or mitigation release.",
+        "required_content": "Root cause analysis, detailed remediation summary, permanent patch PURLs, and lessons learned."
+      }
+    ]
+  },
+  "product_conformity_tiers": [
+    {
+      "category": "Default Products with Digital Elements",
+      "market_share_pct": 90,
+      "examples": [
+        "Smart home appliances",
+        "Consumer cameras",
+        "Standalone mobile apps",
+        "Office productivity software"
+      ],
+      "assessment_procedure": "Internal control (Module A) \u2014 self-assessment by manufacturer."
+    },
+    {
+      "category": "Important Products with Digital Elements \u2014 Class I (Annex III)",
+      "market_share_pct": 8,
+      "examples": [
+        "Identity management systems",
+        "Standalone browsers",
+        "Password managers",
+        "Antivirus software",
+        "VPN hardware & software",
+        "Network interfaces"
+      ],
+      "assessment_procedure": "Application of harmonised standards (Module A) OR third-party EU-type examination (Module B + C)."
+    },
+    {
+      "category": "Important Products with Digital Elements \u2014 Class II (Annex IV)",
+      "market_share_pct": 1.5,
+      "examples": [
+        "Firewalls & IDS/IPS",
+        "Hypervisors & container runtime engines",
+        "Tamper-resistant microprocessors",
+        "Industrial routers",
+        "SIEM platforms"
+      ],
+      "assessment_procedure": "Mandatory third-party conformity assessment (Module B + C) or full quality assurance (Module H)."
+    },
+    {
+      "category": "Critical Products with Digital Elements (Annex V)",
+      "market_share_pct": 0.5,
+      "examples": [
+        "Smart meter gateways",
+        "Hardware security modules (HSMs)",
+        "Operating systems for critical infrastructure entities"
+      ],
+      "assessment_procedure": "Mandatory European cybersecurity certification scheme (EUCC) at level 'high'."
+    }
+  ],
+  "mandatory_sbom_requirements": {
+    "legal_basis": "CRA Article 13(18) & Annex II Section 2",
+    "obligation": "Manufacturers must draw up a software bill of materials (SBOM) identifying and documenting all top-level and transitive software components and dependencies.",
+    "accepted_standards": [
+      "CycloneDX (v1.5+)",
+      "SPDX (v2.3/v3.0)"
+    ],
+    "minimum_data_fields": [
+      "Component supplier / author",
+      "Component name",
+      "Component version string",
+      "Package URL (PURL)",
+      "Cryptographic file hash (SHA-256)",
+      "Relationship type (dependsOn, contains, devDependency)",
+      "License expression (SPDX ID)",
+      "Known vulnerabilities & remediation advisory IDs"
+    ],
+    "retention_period_years": 10
+  }
+}
