@@ -2,7 +2,7 @@
   "metadata": {
     "title": "Manifest Syntax Traps & Parser Quirks Matrix",
     "version": "1.0.0",
-    "last_updated": "2026-09-17T21:52:32.410913+00:00",
+    "last_updated": "2026-09-17T22:18:07.531303+00:00",
     "total_quirks": 8,
     "formats_covered": [
       "YAML 1.1",
