@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packablock Open Datalake</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #0E1B2E;
+      color: #E5E7EB;
+      margin: 0;
+      padding: 3rem 1.5rem;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(34, 211, 238, 0.1);
+      border: 1px solid rgba(34, 211, 238, 0.3);
+      color: #22D3EE;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 2.25rem;
+      color: #FFFFFF;
+      margin: 0 0 1rem;
+      letter-spacing: -0.02em;
+    }
+    p {
+      color: #9CA3AF;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h2 {
+      font-size: 1.15rem;
+      color: #22D3EE;
+      margin: 0 0 0.75rem;
+    }
+    code {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(34, 211, 238, 0.2);
+      color: #22D3EE;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.9rem;
+    }
+    pre {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      color: #A5F3FC;
+      font-size: 0.85rem;
+    }
+    a {
+      color: #22D3EE;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">✦ Public Edge Datalake</div>
+    <h1>Packablock Open Datalake</h1>
+    <p>High-integrity public intelligence datasets for software supply chain security, regulatory compliance, and cybersecurity risk benchmarks.</p>
+
+    <div class="card">
+      <h2>Global Zero-Auth Edge Access</h2>
+      <p style="font-size: 0.95rem; margin-bottom: 1rem;">All datasets are accessible directly via HTTPS or native spreadsheet formula:</p>
+      <pre><code>curl -s https://data.packablock.com/supply-chain/runtime-sbom-matrix.csv</code></pre>
+      <p style="font-size: 0.9rem; margin-top: 1rem;">Google Sheets native import:</p>
+      <pre><code>=IMPORTDATA("https://data.packablock.com/supply-chain/runtime-sbom-matrix.csv")</code></pre>
+    </div>
+
+    <div class="card">
+      <h2>Data Partitions</h2>
+      <ul>
+        <li><code>/supply-chain/</code> &mdash; Runtime engine crosswalks, parser quirks, and OpenSSF benchmarks.</li>
+        <li><code>/regulatory/</code> &mdash; EU Cyber Resilience Act statutory penalties and SEC 8-K filings.</li>
+        <li><code>/benchmarks/</code> &mdash; CISA KEV + EPSS crosswalk and breach settlement databases.</li>
+        <li><code>/telecom/</code> &mdash; FCC Broadband Nutrition Labels and IoT Trust Mark metrics.</li>
+      </ul>
+    </div>
+
+    <p style="font-size: 0.9rem; text-align: center;">
+      Maintained by <a href="https://www.packablock.com">Packablock</a> &bull;
+      Source Code on <a href="https://github.com/Packablock/datalake">GitHub</a>
+    </p>
+  </div>
+</body>
+</html>
