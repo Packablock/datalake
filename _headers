@@ -1,4 +1,18 @@
 /*
   Access-Control-Allow-Origin: *
   Access-Control-Allow-Methods: GET, HEAD, OPTIONS
-  Cache-Control: public, max-age=300, s-maxage=3600
+
+/index.html
+  Cache-Control: public, max-age=60, s-maxage=60
+
+/supply-chain/*
+  Cache-Control: public, max-age=300, s-maxage=300
+
+/regulatory/*
+  Cache-Control: public, max-age=300, s-maxage=300
+
+/benchmarks/*
+  Cache-Control: public, max-age=300, s-maxage=300
+
+/telecom/*
+  Cache-Control: public, max-age=300, s-maxage=300
