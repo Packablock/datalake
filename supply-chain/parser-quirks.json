@@ -1,0 +1,205 @@
+{
+  "metadata": {
+    "title": "Manifest Syntax Traps & Parser Quirks Matrix",
+    "version": "1.0.0",
+    "last_updated": "2026-09-17T21:48:12.054557+00:00",
+    "total_quirks": 8,
+    "formats_covered": [
+      "YAML 1.1",
+      "YAML 1.2",
+      "HCL2",
+      "JSON",
+      "GitHub Actions"
+    ],
+    "license": "CC-BY-4.0",
+    "maintainer": "Packablock Supply Chain Intelligence"
+  },
+  "quirks": [
+    {
+      "quirk_id": "YML-TRAP-01",
+      "title": "The Norway Problem (Unquoted ISO Country Code NO Coerced to Boolean False)",
+      "format": "YAML 1.1",
+      "affected_parsers": [
+        "PyYAML",
+        "SnakeYAML",
+        "gopkg.in/yaml.v2",
+        "js-yaml (<=3.x)"
+      ],
+      "target_manifests": [
+        "Kubernetes ConfigMaps",
+        "Helm Values",
+        "Localization Configs"
+      ],
+      "severity": "High",
+      "category": "Implicit Type Coercion",
+      "cwe": "CWE-704",
+      "description": "In YAML 1.1 specifications, unquoted 'no', 'NO', 'No', 'yes', 'y', 'n', 'on', 'off' are reserved keywords evaluating directly to booleans (true/false). In geographic or localization manifests, an unquoted country code 'NO' (Norway) silently evaluates to false.",
+      "vulnerable_snippet": "allowed_countries:\n  - SE\n  - NO\n  - FI",
+      "parsed_as": "allowed_countries: ['SE', false, 'FI']",
+      "safe_snippet": "allowed_countries:\n  - \"SE\"\n  - \"NO\"\n  - \"FI\"",
+      "failure_vector": "Silent authorization bypass or runtime validation crash when string operations are invoked on boolean values.",
+      "remediation": "Always wrap two-letter ISO country codes and boolean-like strings in explicit double quotes, or configure linters (yamllint) to enforce quotes on boolean keys."
+    },
+    {
+      "quirk_id": "YML-TRAP-02",
+      "title": "Port Mapping Sexagesimal Notation (Base-60 Conversion)",
+      "format": "YAML 1.1",
+      "affected_parsers": [
+        "PyYAML",
+        "Docker Compose CLI (v1/v2 legacy)",
+        "SnakeYAML"
+      ],
+      "target_manifests": [
+        "Docker Compose",
+        "Kubernetes Pod Specs"
+      ],
+      "severity": "Critical",
+      "category": "Sexagesimal Coercion",
+      "cwe": "CWE-704",
+      "description": "YAML 1.1 supports sexagesimal (base-60) numbers using colon notation (e.g. 12:30:00). In Docker Compose files, port mappings like '22:22' (SSH) or '80:80' can be interpreted as sexagesimal integers: '22:22' -> 22*60 + 22 = 1342.",
+      "vulnerable_snippet": "ports:\n  - 22:22\n  - 80:80",
+      "parsed_as": "ports: [1342, 4880]",
+      "safe_snippet": "ports:\n  - \"22:22\"\n  - \"80:80\"",
+      "failure_vector": "Daemon binds unexpected high ports, causing port collision, denial of service, or exposure of non-standard port listeners.",
+      "remediation": "Always quote port mapping declarations as strings ('\"22:22\"') in Compose and container specifications."
+    },
+    {
+      "quirk_id": "YML-TRAP-03",
+      "title": "Octal Permission Interpretation via Leading Zero",
+      "format": "YAML 1.1 / YAML 1.2",
+      "affected_parsers": [
+        "PyYAML",
+        "Go yaml.v3",
+        "Kubernetes API server"
+      ],
+      "target_manifests": [
+        "Kubernetes Secret/ConfigMap defaultMode",
+        "POSIX Permissions"
+      ],
+      "severity": "High",
+      "category": "Octal Radix Coercion",
+      "cwe": "CWE-732",
+      "description": "In YAML 1.1, integers with a leading 0 (e.g. 0755) are parsed as octal (decimal 493). In YAML 1.2, octal integers require '0o' prefix (e.g. 0o755), and '0755' may either error or be treated as decimal 755 (octal 01363), drastically altering file permissions.",
+      "vulnerable_snippet": "volumes:\n  - name: config\n    configMap:\n      name: app-config\n      defaultMode: 0755",
+      "parsed_as": "defaultMode: 493 (in YAML 1.1) vs 755 (in YAML 1.2 / JSON integer mode)",
+      "safe_snippet": "defaultMode: 0o755 # or decimal 493 explicitly",
+      "failure_vector": "Incorrect filesystem permissions on mounted secrets or configuration files, potentially creating world-writable security vulnerabilities.",
+      "remediation": "Use explicit octal prefix '0o' or verify target parser standard, or document permission integers in decimal format."
+    },
+    {
+      "quirk_id": "YML-TRAP-04",
+      "title": "Duplicate Map Keys Silent Overwrite vs Reject",
+      "format": "YAML 1.1 / YAML 1.2 / JSON",
+      "affected_parsers": [
+        "Python PyYAML",
+        "Ruby Psych",
+        "Go gopkg.in/yaml.v2",
+        "JSON.parse()"
+      ],
+      "target_manifests": [
+        "Kubernetes Deployment Spec",
+        "AWS CloudFormation",
+        "Terraform JSON"
+      ],
+      "severity": "Critical",
+      "category": "Key Shadowing / Semantic Deserialization",
+      "cwe": "CWE-471",
+      "description": "When duplicate keys exist in a mapping, different parsers handle it inconsistently: PyYAML silently retains the last key, Go yaml.v2 overwrites, while yaml.v3 or Kubernetes strict JSON decoders throw a validation error. Attackers exploit duplicate keys to bypass WAFs or admission controllers.",
+      "vulnerable_snippet": "spec:\n  securityContext:\n    runAsNonRoot: true\n  # ... 50 lines of config ...\n  securityContext:\n    runAsNonRoot: false",
+      "parsed_as": "securityContext.runAsNonRoot: false (last key wins in lax parsers)",
+      "safe_snippet": "spec:\n  securityContext:\n    runAsNonRoot: true",
+      "failure_vector": "Security guardrails or admission controls validated on the first occurrence are overridden by trailing duplicate keys in the backend runtime.",
+      "remediation": "Enforce strict unmarshaling flags (e.g. yaml.Decoder.KnownFields(true), json.Decoder.DisallowUnknownFields()) in admission controllers."
+    },
+    {
+      "quirk_id": "YML-TRAP-05",
+      "title": "YAML Billion Laughs Entity Expansion / Anchor Bomb",
+      "format": "YAML 1.1 / YAML 1.2",
+      "affected_parsers": [
+        "PyYAML (<5.3.1)",
+        "SnakeYAML (<2.0)",
+        "Ruby Psych (<3.1.0)"
+      ],
+      "target_manifests": [
+        "Helm Charts",
+        "CI/CD Pipeline Configurations",
+        "User Upload Manifests"
+      ],
+      "severity": "Critical",
+      "category": "Resource Exhaustion / DoS",
+      "cwe": "CWE-776",
+      "description": "Recursive anchors and aliases (&a, *a) allow exponential expansion of deeply nested data structures, consuming gigabytes of memory from a payload under 1 KB.",
+      "vulnerable_snippet": "a: &a [\"lol\",\"lol\",\"lol\",\"lol\",\"lol\"]\nb: &b [*a,*a,*a,*a,*a]\nc: &c [*b,*b,*b,*b,*b]\nd: [*c,*c,*c,*c,*c]",
+      "parsed_as": "Memory exhaustion crash / Out of Memory OOM killer triggered",
+      "safe_snippet": "# Restrict alias depth and total node counts in parser configuration",
+      "failure_vector": "Complete denial of service on manifest parsing servers, admission webhooks, and CI runners.",
+      "remediation": "Enforce parser limits on maximum alias expansion depth or use SafeLoader with alias resolution limits."
+    },
+    {
+      "quirk_id": "HCL-TRAP-01",
+      "title": "HCL2 Dynamic Expression String Interpolation vs Object Reference",
+      "format": "HCL2",
+      "affected_parsers": [
+        "hashicorp/hcl/v2",
+        "Terraform 0.12+"
+      ],
+      "target_manifests": [
+        "Terraform Configurations",
+        "Terragrunt"
+      ],
+      "severity": "Medium",
+      "category": "Type Coercion / Syntax Deprecation",
+      "cwe": "CWE-704",
+      "description": "In HCL2 (Terraform 0.12+), wrapping references in quotes and interpolation syntax (\"${var.item}\") forces string coercion, while raw references (var.item) preserve lists, maps, or booleans. Forcing a list to string produces invalid argument types.",
+      "vulnerable_snippet": "subnet_ids = \"${module.vpc.subnet_ids}\"",
+      "parsed_as": "subnet_ids converted to string or throws 'A string value is required'",
+      "safe_snippet": "subnet_ids = module.vpc.subnet_ids",
+      "failure_vector": "Deployment pipeline failures or unexpected string serialization of complex data structures.",
+      "remediation": "Omit interpolation quotes for first-class object references in HCL2."
+    },
+    {
+      "quirk_id": "JSN-TRAP-01",
+      "title": "JavaScript IEEE-754 Large Integer Precision Truncation",
+      "format": "JSON",
+      "affected_parsers": [
+        "V8 JSON.parse()",
+        "WebKit JavaScriptCore",
+        "Node.js JSON parser"
+      ],
+      "target_manifests": [
+        "Audit Logs",
+        "Snowflake IDs",
+        "Cryptographic Nonces"
+      ],
+      "severity": "High",
+      "category": "Numeric Precision Loss",
+      "cwe": "CWE-681",
+      "description": "JSON numbers are parsed as 64-bit floating point numbers (IEEE 754) in standard JavaScript engines. Integers exceeding Number.MAX_SAFE_INTEGER (9,007,199,254,740,991 or 2^53 - 1), such as 64-bit database IDs or Twitter snowflakes, lose precision silently.",
+      "vulnerable_snippet": "{\"transaction_id\": 9007199254740993}",
+      "parsed_as": "{\"transaction_id\": 9007199254740992}",
+      "safe_snippet": "{\"transaction_id\": \"9007199254740993\"}",
+      "failure_vector": "Attestation log corruption, cryptographic signature mismatch, or colliding record lookups.",
+      "remediation": "Always encode 64-bit integer IDs, hashes, and nonces as strings in JSON payloads."
+    },
+    {
+      "quirk_id": "GHA-TRAP-01",
+      "title": "GitHub Actions Inline Script Expression Injection",
+      "format": "YAML / Actions Expression",
+      "affected_parsers": [
+        "GitHub Actions Runner Expression Evaluator"
+      ],
+      "target_manifests": [
+        "GitHub Actions Workflows (.github/workflows/*.yml)"
+      ],
+      "severity": "Critical",
+      "category": "Script Injection",
+      "cwe": "CWE-78",
+      "description": "Directly inlining untrusted context variables like ${{ github.event.issue.title }} or ${{ github.head_ref }} inside a 'run:' bash block allows shell injection, as the expression is rendered prior to shell execution.",
+      "vulnerable_snippet": "run: echo \"Processing issue: ${{ github.event.issue.title }}\"",
+      "parsed_as": "Shell executes arbitrary injected shell commands if issue title contains '; rm -rf /; ...'",
+      "safe_snippet": "env:\n  ISSUE_TITLE: ${{ github.event.issue.title }}\nrun: echo \"Processing issue: $ISSUE_TITLE\"",
+      "failure_vector": "Remote code execution on CI runner, compromise of repository secrets and deployment tokens.",
+      "remediation": "Always assign untrusted workflow context expressions to intermediate environment variables before accessing them in shell commands."
+    }
+  ]
+}
