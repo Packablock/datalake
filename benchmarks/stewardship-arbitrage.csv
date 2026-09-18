@@ -1,0 +1,9 @@
+ecosystem_tier,representative_packages,annual_big4_advisory_spend,direct_stewardship_grant,packablock_attestation_cost,total_stewardship_model_cost,net_annual_savings,arbitrage_roi_pct,cra_statutory_defense_score,mean_upstream_patch_velocity_days,big4_audit_lag_days,statutory_due_diligence_rating,last_updated
+Core Cryptographic & Network Primitives,"OpenSSL, cURL, zlib, libssh, BouncyCastle",450000,65000,15000,80000,370000,462.5,94.5,3,60,Superior / Defensible,2026-09-18
+Operating System & Container Runtimes,"Linux Kernel, containerd, runc, systemd",600000,95000,18000,113000,487000,431.0,96.0,2,75,Superior / Defensible,2026-09-18
+Cloud Native & Orchestration,"Kubernetes, Envoy, Prometheus, CoreDNS",550000,85000,18000,103000,447000,434.0,92.5,4,45,Superior / Defensible,2026-09-18
+Enterprise Language Runtime Engines,"CPython (PSF), Node.js (OpenJS), Rust Foundation, OpenJDK",400000,60000,12000,72000,328000,455.6,91.0,5,60,Superior / Defensible,2026-09-18
+Web & Microservices Application Frameworks,"Fastify, Spring Boot, Express, Django, Actix",350000,45000,12000,57000,293000,514.0,88.5,6,50,Defensible,2026-09-18
+"Big Data, Distributed Queues & Analytics","Apache Kafka, Apache Spark, Arrow, ClickHouse",480000,75000,15000,90000,390000,433.3,90.0,5,70,Superior / Defensible,2026-09-18
+Infrastructure-as-Code & Automation,"OpenTofu, Ansible Core, Terraform Registry Providers",320000,40000,12000,52000,268000,515.4,89.0,4,45,Defensible,2026-09-18
+"Identity, Auth & Cryptographic Tokens","Keycloak, Dex, OAuth2-Proxy, Jose, PyJWT",380000,55000,12000,67000,313000,467.2,93.0,3,55,Superior / Defensible,2026-09-18
