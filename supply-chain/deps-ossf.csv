@@ -1,0 +1,30 @@
+package_name,ecosystem,purl,version,spdx_license,license_category,commercial_saas_risk,openssf_scorecard,maintenance_score,security_policy_score,code_review_score,unresolved_cves,copyleft_trigger_type,cra_conformity_status,last_updated
+lodash,npm,pkg:npm/lodash@4.17.21,4.17.21,MIT,Permissive,Low,6.8,6.0,10.0,5.0,0,None,Conformant,2026-09-18
+react,npm,pkg:npm/react@18.3.1,18.3.1,MIT,Permissive,Low,8.9,10.0,10.0,10.0,0,None,Conformant,2026-09-18
+express,npm,pkg:npm/express@4.21.0,4.21.0,MIT,Permissive,Low,7.4,8.0,10.0,7.0,0,None,Conformant,2026-09-18
+axios,npm,pkg:npm/axios@1.7.7,1.7.7,MIT,Permissive,Low,8.1,9.0,10.0,8.0,0,None,Conformant,2026-09-18
+fastify,npm,pkg:npm/fastify@4.28.1,4.28.1,MIT,Permissive,Low,9.2,10.0,10.0,9.0,0,None,Conformant,2026-09-18
+core-js,npm,pkg:npm/core-js@3.38.1,3.38.1,MIT,Permissive,Low,6.2,7.0,0.0,6.0,0,None,Audit Required,2026-09-18
+prisma,npm,pkg:npm/prisma@5.19.1,5.19.1,Apache-2.0,Permissive,Low,8.6,10.0,10.0,9.0,0,None,Conformant,2026-09-18
+socket.io,npm,pkg:npm/socket.io@4.7.5,4.7.5,MIT,Permissive,Low,7.8,8.0,10.0,7.0,0,None,Conformant,2026-09-18
+uglify-js,npm,pkg:npm/uglify-js@3.19.3,3.19.3,BSD-2-Clause,Permissive,Low,5.4,5.0,0.0,4.0,1,None,Audit Required,2026-09-18
+requests,pypi,pkg:pypi/requests@2.32.3,2.32.3,Apache-2.0,Permissive,Low,8.5,9.0,10.0,8.0,0,None,Conformant,2026-09-18
+pydantic,pypi,pkg:pypi/pydantic@2.9.1,2.9.1,MIT,Permissive,Low,9.1,10.0,10.0,9.0,0,None,Conformant,2026-09-18
+fastapi,pypi,pkg:pypi/fastapi@0.115.0,0.115.0,MIT,Permissive,Low,8.7,10.0,10.0,8.0,0,None,Conformant,2026-09-18
+django,pypi,pkg:pypi/django@5.1.1,5.1.1,BSD-3-Clause,Permissive,Low,9.4,10.0,10.0,10.0,0,None,Conformant,2026-09-18
+celery,pypi,pkg:pypi/celery@5.4.0,5.4.0,BSD-3-Clause,Permissive,Low,7.6,8.0,10.0,7.0,0,None,Conformant,2026-09-18
+sqlalchemy,pypi,pkg:pypi/sqlalchemy@2.0.35,2.0.35,MIT,Permissive,Low,8.3,9.0,10.0,8.0,0,None,Conformant,2026-09-18
+ansible-core,pypi,pkg:pypi/ansible-core@2.17.4,2.17.4,GPL-3.0-or-later,Strong Copyleft,High,8.6,10.0,10.0,9.0,1,Binary Distribution / Embedded Distro,Audit Required,2026-09-18
+gin,golang,pkg:golang/github.com/gin-gonic/gin@v1.10.0,v1.10.0,MIT,Permissive,Low,7.9,8.0,10.0,8.0,0,None,Conformant,2026-09-18
+kubernetes,golang,pkg:golang/k8s.io/kubernetes@v1.31.0,v1.31.0,Apache-2.0,Permissive,Low,9.3,10.0,10.0,10.0,0,None,Conformant,2026-09-18
+terraform,golang,pkg:golang/github.com/hashicorp/terraform@v1.9.5,v1.9.5,BSL-1.1,Source Available,High,8.2,9.0,10.0,9.0,0,Competitive Commercial Hosting,Audit Required,2026-09-18
+minio,golang,pkg:golang/github.com/minio/minio@v0.0.0-20240913,v2024-09-13,AGPL-3.0-only,Network Copyleft,Critical,8.4,10.0,10.0,8.0,0,Network Interaction / SaaS API,High Risk,2026-09-18
+grafana,golang,pkg:golang/github.com/grafana/grafana@v11.2.0,v11.2.0,AGPL-3.0-only,Network Copyleft,Critical,8.8,10.0,10.0,9.0,0,Network Interaction / SaaS API,High Risk,2026-09-18
+containerd,golang,pkg:golang/github.com/containerd/containerd@v1.7.21,v1.7.21,Apache-2.0,Permissive,Low,9.0,10.0,10.0,9.0,0,None,Conformant,2026-09-18
+tokio,cargo,pkg:cargo/tokio@1.40.0,1.40.0,MIT,Permissive,Low,9.1,10.0,10.0,9.0,0,None,Conformant,2026-09-18
+serde,cargo,pkg:cargo/serde@1.0.210,1.0.210,MIT OR Apache-2.0,Permissive,Low,8.7,9.0,10.0,8.0,0,None,Conformant,2026-09-18
+ripgrep,cargo,pkg:cargo/ripgrep@14.1.0,14.1.0,Unlicense OR MIT,Permissive,Low,8.3,8.0,10.0,8.0,0,None,Conformant,2026-09-18
+spring-boot,maven,pkg:maven/org.springframework.boot/spring-boot@3.3.3,3.3.3,Apache-2.0,Permissive,Low,9.2,10.0,10.0,9.0,0,None,Conformant,2026-09-18
+log4j-core,maven,pkg:maven/org.apache.logging.log4j/log4j-core@2.24.0,2.24.0,Apache-2.0,Permissive,Low,8.9,10.0,10.0,9.0,0,None,Conformant,2026-09-18
+hibernate-core,maven,pkg:maven/org.hibernate.orm/hibernate-core@6.6.0.Final,6.6.0.Final,LGPL-2.1-only,Weak Copyleft,Medium,7.9,9.0,10.0,7.0,0,Dynamic Linking Only,Audit Required,2026-09-18
+logback-classic,maven,pkg:maven/ch.qos.logback/logback-classic@1.5.8,1.5.8,EPL-1.0 OR LGPL-2.1-only,Weak Copyleft,Medium,7.5,8.0,10.0,7.0,0,Dynamic Linking Only,Audit Required,2026-09-18
