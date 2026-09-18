@@ -16,3 +16,9 @@
 
 /telecom/*
   Cache-Control: public, max-age=300, s-maxage=300
+
+/smallbiz/*
+  Cache-Control: public, max-age=300, s-maxage=300
+
+/homelab/*
+  Cache-Control: public, max-age=300, s-maxage=300
