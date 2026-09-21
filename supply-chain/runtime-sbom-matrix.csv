@@ -4,7 +4,7 @@ terraform,go,pkg:golang/github.com/hashicorp/terraform@v1.9.5,v1.9.5,MPL-2.0,6.6
 cert-manager,go,pkg:golang/github.com/cert-manager/cert-manager@v1.15.3,v1.15.3,Apache-2.0,8.0,2,0,containerd,True,3,2024-08-14,Active
 argo-cd,go,pkg:golang/github.com/argoproj/argo-cd/v2@v2.12.3,v2.12.3,Apache-2.0,9.5,16,1,containerd,True,2,2024-08-27,Active
 vault,go,pkg:golang/github.com/hashicorp/vault@v1.17.5,v1.17.5,MIT,6.5,40,1,binary,True,2,2024-08-30,Active
-prometheus,go,pkg:golang/github.com/prometheus/prometheus@v2.54.1,v2.54.1,Apache-2.0,8.5,0,0,containerd,True,3,2026-09-20,Active
+prometheus,go,pkg:golang/github.com/prometheus/prometheus@v2.54.1,v2.54.1,Apache-2.0,8.5,0,0,containerd,True,3,2026-09-21,Active
 cilium,go,pkg:golang/github.com/cilium/cilium@v1.16.1,v1.16.1,Apache-2.0,5.8,22,1,containerd,True,3,2024-08-13,Active
 helm,go,pkg:golang/helm.sh/helm/v3@v3.15.4,v3.15.4,Apache-2.0,9.1,12,1,binary,True,3,2024-08-14,Active
 containerd,go,pkg:golang/github.com/containerd/containerd@v1.7.21,v1.7.21,Apache-2.0,9.3,15,1,containerd,True,3,2024-08-26,Active
@@ -17,8 +17,8 @@ express,npm,pkg:npm/express@4.19.2,4.19.2,MIT,8.5,1,0,binary,True,2,2024-03-25,A
 next,npm,pkg:npm/next@14.2.10,14.2.10,MIT,6.2,33,1,binary,True,2,2024-09-11,Active
 tokio,cargo,pkg:cargo/tokio@1.40.0,1.40.0,MIT,6.9,2,0,binary,True,2,2024-08-30,Active
 cryptography,pypi,pkg:pypi/cryptography@43.0.1,43.0.1,Apache-2.0 OR BSD-3-Clause,8.3,10,1,binary,True,3,2024-09-03,Active
-istio,go,pkg:golang/istio.io/istio@v1.23.0,v1.23.0,Apache-2.0,6.3,0,0,containerd,True,3,2026-09-20,Active
-docker-cli,go,pkg:golang/github.com/docker/cli@v27.2.0,v27.2.0,Apache-2.0,8.2,0,0,docker,True,2,2026-09-20,Active
+istio,go,pkg:golang/istio.io/istio@v1.23.0,v1.23.0,Apache-2.0,6.3,0,0,containerd,True,3,2026-09-21,Active
+docker-cli,go,pkg:golang/github.com/docker/cli@v27.2.0,v27.2.0,Apache-2.0,8.2,0,0,docker,True,2,2026-09-21,Active
 cri-o,go,pkg:golang/github.com/cri-o/cri-o@v1.31.0,v1.31.0,Apache-2.0,9.4,6,1,cri-o,True,3,2024-09-09,Active
 etcd,go,pkg:golang/go.etcd.io/etcd/v3@v3.5.15,v3.5.15,Apache-2.0,6.3,10,1,binary,True,3,2024-07-19,Active
 coredns,go,pkg:golang/github.com/coredns/coredns@v1.11.3,v1.11.3,Apache-2.0,8.6,22,1,containerd,True,3,2024-04-26,Active
@@ -31,4 +31,4 @@ requests,pypi,pkg:pypi/requests@2.32.3,2.32.3,Apache-2.0,8.2,4,0,binary,True,2,2
 pydantic,pypi,pkg:pypi/pydantic@2.8.2,2.8.2,MIT,6.8,0,0,binary,True,2,2024-07-04,Active
 prisma,npm,pkg:npm/prisma@5.19.1,5.19.1,Apache-2.0,6.7,0,0,binary,True,2,2024-09-02,Active
 envoy,go,pkg:golang/github.com/envoyproxy/go-control-plane@v0.13.0,v0.13.0,Apache-2.0,9.1,0,0,containerd,True,3,2024-08-09,Active
-falco,go,pkg:golang/github.com/falcosecurity/falco@v0.38.1,v0.38.1,Apache-2.0,6.9,0,0,containerd,True,2,2026-09-20,Active
+falco,go,pkg:golang/github.com/falcosecurity/falco@v0.38.1,v0.38.1,Apache-2.0,6.9,0,0,containerd,True,2,2026-09-21,Active
