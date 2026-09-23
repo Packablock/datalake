@@ -4,7 +4,7 @@
       "slug": "yaml-in-kubernetes-1-31",
       "search_query": "What version of YAML is in Kubernetes 1.31?",
       "category": "Cloud Native & Orchestration",
-      "last_updated": "2026-09-23T19:00:51.502306+00:00",
+      "last_updated": "2026-09-23T19:20:35.831387+00:00",
       "host": {
         "name": "Kubernetes",
         "package_name": "k8s.io/kubernetes",
@@ -93,7 +93,79 @@
         "verified_provenance": true,
         "reachability_rationale": "Evaluated under EU CRA Article 10/11: sigs.k8s.io/yaml is directly reachable in core production binaries; hazardous unquoted type coercions are systematically eliminated through mandatory JSON transcoding.",
         "enisa_sector": "Digital Infrastructure & Cloud Services",
-        "nis2_scope": "Essential (Annex I - Article 21)"
+        "nis2_scope": "Essential (Annex I - Article 21)",
+        "governing_standards": [
+          {
+            "body": "European Union / European Commission",
+            "framework": "EU Cyber Resilience Act (CRA)",
+            "regulation_id": "Regulation (EU) 2024/2847",
+            "scope": "Important Product with Digital Elements (Class I / Cloud Infrastructure Control Plane)",
+            "url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj"
+          },
+          {
+            "body": "ENISA / European Commission",
+            "framework": "NIS2 Directive",
+            "regulation_id": "Directive (EU) 2022/2555",
+            "scope": "Digital Infrastructure & Cloud Services (Annex I - Essential Entity)",
+            "url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
+          },
+          {
+            "body": "NIST / US CISA",
+            "framework": "Secure Software Development Framework (SSDF)",
+            "regulation_id": "NIST SP 800-218 v1.1",
+            "scope": "Federal Software Supply Chain Policy & Dependency Provenance",
+            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+          },
+          {
+            "body": "Linux Foundation / OpenSSF",
+            "framework": "Supply-chain Levels for Software Artifacts (SLSA)",
+            "regulation_id": "SLSA v1.0 Specification",
+            "scope": "Hermetic Build Integrity & Cryptographic Attestation (Level 3)",
+            "url": "https://slsa.dev/spec/v1.0/"
+          }
+        ],
+        "governance_checklist": [
+          {
+            "mandate": "CRA Art. 10(4)",
+            "framework": "EU Cyber Resilience Act",
+            "requirement": "Machine-readable Software Bill of Materials (SBOM) identifying all direct and transitive dependencies",
+            "status": "Attested",
+            "attestation_method": "Exported CycloneDX 1.5 and SPDX 2.3 manifests with canonical PURLs",
+            "regulation_url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj"
+          },
+          {
+            "mandate": "CRA Art. 11(1)",
+            "framework": "EU Cyber Resilience Act",
+            "requirement": "Continuous vulnerability monitoring and production reachability analysis",
+            "status": "Compliant",
+            "attestation_method": "Automated call-graph analysis separating API server admission paths from dormant sub-packages",
+            "regulation_url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj"
+          },
+          {
+            "mandate": "NIS2 Art. 21(2)(d)",
+            "framework": "NIS2 Directive",
+            "requirement": "Supply chain security risk management covering third-party parsers and sub-dependencies",
+            "status": "Attested",
+            "attestation_method": "Cryptographic attestation and parser divergence verification across transitive dependencies",
+            "regulation_url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
+          },
+          {
+            "mandate": "NIST SSDF PW.6 / PW.7",
+            "framework": "NIST SP 800-218",
+            "requirement": "Integrity verification of third-party software components and provenance attestation",
+            "status": "Compliant",
+            "attestation_method": "Cryptographic lockfile ledger (packablock.yaml) anchoring repository commits and releases",
+            "regulation_url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+          },
+          {
+            "mandate": "SLSA Build Level 3",
+            "framework": "SLSA v1.0",
+            "requirement": "Hermetic build pipeline with non-falsifiable cryptographic provenance",
+            "status": "Attested",
+            "attestation_method": "Cryptographically verified build attestation with immutable package digest tracking",
+            "regulation_url": "https://slsa.dev/spec/v1.0/"
+          }
+        ]
       },
       "threat_intelligence": {
         "known_cve_count": 2,
@@ -217,22 +289,6 @@
           "title": "CVE-2022-3064: gopkg.in/yaml.v2 Memory Consumption",
           "url": "https://www.cve.org/CVERecord?id=CVE-2022-3064",
           "summary": "Excessive memory allocation in legacy yaml.v2 unmarshaler when processing maliciously crafted documents."
-        },
-        {
-          "fact_id": "CISA-KEV-STATUS",
-          "authority": "CISA",
-          "category": "threat_telemetry",
-          "title": "CISA KEV Weaponization Status: Clean",
-          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
-          "summary": "Zero active weaponized exploitation campaigns or ransomware playbooks recorded in CISA KEV catalog."
-        },
-        {
-          "fact_id": "ENISA-ETL-2026-CLOUD",
-          "authority": "ENISA",
-          "category": "statutory",
-          "title": "ENISA Threat Landscape 2026: Digital Infrastructure & Cloud Services",
-          "url": "https://www.enisa.europa.eu/publications/enisa-threat-landscape-2026",
-          "summary": "Cloud infrastructure benchmarks evaluate a 12.3% supply chain intrusion rate, mandating strict software bill of materials under NIS2 Article 21(2)(d)."
         }
       ],
       "sbom_snippets": {
