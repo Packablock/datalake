@@ -4,7 +4,7 @@
       "slug": "yaml-in-kubernetes-1-31",
       "search_query": "What version of YAML is in Kubernetes 1.31?",
       "category": "Cloud Native & Orchestration",
-      "last_updated": "2026-09-23T18:37:41.458121+00:00",
+      "last_updated": "2026-09-23T18:51:40.207991+00:00",
       "host": {
         "name": "Kubernetes",
         "package_name": "k8s.io/kubernetes",
@@ -58,6 +58,7 @@
             "title": "The Norway Problem (Unquoted Country Code NO Coerced to Boolean False)",
             "severity": "High",
             "cwe": "CWE-704",
+            "cwe_url": "https://cwe.mitre.org/data/definitions/704.html",
             "code_bad": "allowed_countries:\n  - SE\n  - NO  # Evaluates to boolean false in YAML 1.1",
             "code_good": "allowed_countries:\n  - \"SE\"\n  - \"NO\"  # Preserved as string in sigs.k8s.io/yaml",
             "impact": "Silent authorization bypass in geographic admission controllers when raw YAML 1.1 unmarshaling is invoked without JSON transcoding."
@@ -67,6 +68,7 @@
             "title": "Duplicate Map Keys Silent Overwrite vs Reject",
             "severity": "Critical",
             "cwe": "CWE-471",
+            "cwe_url": "https://cwe.mitre.org/data/definitions/471.html",
             "code_bad": "spec:\n  securityContext:\n    runAsNonRoot: true\n  securityContext:\n    runAsNonRoot: false  # Shadow key overrides in lax parsers",
             "code_good": "spec:\n  securityContext:\n    runAsNonRoot: true  # Rejected with parse error in sigs.k8s.io/yaml and yaml.v3",
             "impact": "Admission control validation bypass where trailing duplicate keys overwrite earlier security parameters in permissive parsers."
@@ -76,6 +78,7 @@
             "title": "Octal Permission Radix Interpretation via Leading Zero",
             "severity": "High",
             "cwe": "CWE-732",
+            "cwe_url": "https://cwe.mitre.org/data/definitions/732.html",
             "code_bad": "volumes:\n  - name: config\n    configMap:\n      defaultMode: 0755  # Decimal 493 in YAML 1.1 vs 755 in JSON mode",
             "code_good": "volumes:\n  - name: config\n    configMap:\n      defaultMode: 0o755  # Explicit octal notation",
             "impact": "Incorrect filesystem permissions applied to mounted volumes in Pod specs when different YAML specifications are cross-compiled."
