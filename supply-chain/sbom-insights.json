@@ -6,7 +6,7 @@
       "category": "SBOM Insights",
       "target_family": "yaml",
       "resolution_status": "Resolved",
-      "last_updated": "2026-09-23T22:12:55.804768+00:00",
+      "last_updated": "2026-09-23T22:30:30.373152+00:00",
       "host": {
         "name": "Kubernetes",
         "package_name": "k8s.io/kubernetes",
@@ -18,6 +18,7 @@
         "runtime_ecosystem": "GO"
       },
       "target": {
+        "name": "YAML",
         "primary_library": "sigs.k8s.io/yaml",
         "primary_version": "v1.4.0",
         "primary_purl": "pkg:golang/sigs.k8s.io/yaml@v1.4.0",
