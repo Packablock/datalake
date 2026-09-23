@@ -4,7 +4,7 @@
       "slug": "yaml-in-kubernetes-1-31",
       "search_query": "What version of YAML is in Kubernetes 1.31?",
       "category": "SBOM Insights",
-      "last_updated": "2026-09-23T20:52:15.506236+00:00",
+      "last_updated": "2026-09-23T21:01:37.564027+00:00",
       "host": {
         "name": "Kubernetes",
         "package_name": "k8s.io/kubernetes",
@@ -27,7 +27,7 @@
             "package": "gopkg.in/yaml.v3",
             "version": "v3.0.1",
             "purl": "pkg:golang/gopkg.in/yaml.v3@v3.0.1",
-            "dependency_type": "Transitive Dependency",
+            "dependency_type": "Direct Dependency",
             "role": "Core YAML 1.2 parsing engine with strict duplicate key enforcement",
             "spec_level": "YAML 1.2 Core"
           },
@@ -35,7 +35,7 @@
             "package": "gopkg.in/yaml.v2",
             "version": "v2.4.0",
             "purl": "pkg:golang/gopkg.in/yaml.v2@v2.4.0",
-            "dependency_type": "Transitive Dependency",
+            "dependency_type": "Direct Dependency",
             "role": "Legacy YAML 1.1 parser retained for backwards compatibility across sub-packages",
             "spec_level": "YAML 1.1 Legacy"
           }
@@ -59,7 +59,6 @@
           "MPL-2.0"
         ],
         "openssf_scorecard_avg": 7.2,
-        "slsa_level": 3,
         "known_cve_count": 2,
         "host_cve_count": 6,
         "host_advisories_count": 11,
@@ -82,7 +81,7 @@
             "package": "gopkg.in/yaml.v3",
             "version": "v3.0.1",
             "role": "Core YAML 1.2 parsing engine with strict duplicate key enforcement",
-            "direct_or_transitive": "Transitive Dependency",
+            "direct_or_transitive": "Direct Dependency",
             "spec_level": "YAML 1.2 Core",
             "purl": "pkg:golang/gopkg.in/yaml.v3@v3.0.1"
           },
@@ -90,7 +89,7 @@
             "package": "gopkg.in/yaml.v2",
             "version": "v2.4.0",
             "role": "Legacy YAML 1.1 parser retained for backwards compatibility across sub-packages",
-            "direct_or_transitive": "Transitive Dependency",
+            "direct_or_transitive": "Direct Dependency",
             "spec_level": "YAML 1.1 Legacy",
             "purl": "pkg:golang/gopkg.in/yaml.v2@v2.4.0"
           }
@@ -133,8 +132,6 @@
         "support_tier": "Active Support",
         "end_of_life": false,
         "reachability_classification": "Production Reachable (API server admission & kubelet control loop)",
-        "slsa_level": 3,
-        "verified_provenance": true,
         "reachability_rationale": "Evaluated under EU CRA Article 10/11: sigs.k8s.io/yaml is directly reachable in core production binaries; hazardous unquoted type coercions are systematically eliminated through mandatory JSON transcoding.",
         "enisa_sector": "Digital Infrastructure & Cloud Services",
         "nis2_scope": "Essential (Annex I - Article 21)",
@@ -159,13 +156,6 @@
             "regulation_id": "NIST SP 800-218 v1.1",
             "scope": "Federal Software Supply Chain Policy & Dependency Provenance",
             "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
-          },
-          {
-            "body": "Linux Foundation / OpenSSF",
-            "framework": "Supply-chain Levels for Software Artifacts (SLSA)",
-            "regulation_id": "SLSA v1.0 Specification",
-            "scope": "Hermetic Build Integrity & Cryptographic Attestation (Level 3)",
-            "url": "https://slsa.dev/spec/v1.0/"
           }
         ]
       },
