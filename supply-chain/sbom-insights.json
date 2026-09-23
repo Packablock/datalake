@@ -4,7 +4,7 @@
       "slug": "yaml-in-kubernetes-1-31",
       "search_query": "What version of YAML is in Kubernetes 1.31?",
       "category": "Cloud Native & Orchestration",
-      "last_updated": "2026-09-23T19:20:35.831387+00:00",
+      "last_updated": "2026-09-23T19:28:16.181113+00:00",
       "host": {
         "name": "Kubernetes",
         "package_name": "k8s.io/kubernetes",
@@ -122,48 +122,6 @@
             "regulation_id": "SLSA v1.0 Specification",
             "scope": "Hermetic Build Integrity & Cryptographic Attestation (Level 3)",
             "url": "https://slsa.dev/spec/v1.0/"
-          }
-        ],
-        "governance_checklist": [
-          {
-            "mandate": "CRA Art. 10(4)",
-            "framework": "EU Cyber Resilience Act",
-            "requirement": "Machine-readable Software Bill of Materials (SBOM) identifying all direct and transitive dependencies",
-            "status": "Attested",
-            "attestation_method": "Exported CycloneDX 1.5 and SPDX 2.3 manifests with canonical PURLs",
-            "regulation_url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj"
-          },
-          {
-            "mandate": "CRA Art. 11(1)",
-            "framework": "EU Cyber Resilience Act",
-            "requirement": "Continuous vulnerability monitoring and production reachability analysis",
-            "status": "Compliant",
-            "attestation_method": "Automated call-graph analysis separating API server admission paths from dormant sub-packages",
-            "regulation_url": "https://eur-lex.europa.eu/eli/reg/2024/2847/oj"
-          },
-          {
-            "mandate": "NIS2 Art. 21(2)(d)",
-            "framework": "NIS2 Directive",
-            "requirement": "Supply chain security risk management covering third-party parsers and sub-dependencies",
-            "status": "Attested",
-            "attestation_method": "Cryptographic attestation and parser divergence verification across transitive dependencies",
-            "regulation_url": "https://eur-lex.europa.eu/eli/dir/2022/2555/oj"
-          },
-          {
-            "mandate": "NIST SSDF PW.6 / PW.7",
-            "framework": "NIST SP 800-218",
-            "requirement": "Integrity verification of third-party software components and provenance attestation",
-            "status": "Compliant",
-            "attestation_method": "Cryptographic lockfile ledger (packablock.yaml) anchoring repository commits and releases",
-            "regulation_url": "https://csrc.nist.gov/pubs/sp/800/218/final"
-          },
-          {
-            "mandate": "SLSA Build Level 3",
-            "framework": "SLSA v1.0",
-            "requirement": "Hermetic build pipeline with non-falsifiable cryptographic provenance",
-            "status": "Attested",
-            "attestation_method": "Cryptographically verified build attestation with immutable package digest tracking",
-            "regulation_url": "https://slsa.dev/spec/v1.0/"
           }
         ]
       },
