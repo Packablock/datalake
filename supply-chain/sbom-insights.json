@@ -3,8 +3,8 @@
     {
       "slug": "yaml-in-kubernetes-1-31",
       "search_query": "What version of YAML is in Kubernetes 1.31?",
-      "category": "Cloud Native & Orchestration",
-      "last_updated": "2026-09-23T19:28:16.181113+00:00",
+      "category": "SBOM Insights",
+      "last_updated": "2026-09-23T19:36:41.242407+00:00",
       "host": {
         "name": "Kubernetes",
         "package_name": "k8s.io/kubernetes",
@@ -23,6 +23,28 @@
         "repo_url": "https://github.com/kubernetes-sigs/yaml"
       },
       "direct_answer_summary": "Kubernetes v1.31.0 utilizes sigs.k8s.io/yaml v1.4.0 as its primary JSON/YAML transcoder across the API server, kubectl, and kubelet. It enforces YAML 1.2 rules via JSON transcoding while pinning gopkg.in/yaml.v3 v3.0.1 for strict duplicate key rejection.",
+      "transitory_sbom": {
+        "purl": "pkg:golang/k8s.io/kubernetes@v1.31.0",
+        "release_date": "2024-08-13",
+        "ecosystem": "GO Modules (pkg:go)",
+        "dependency_count_direct": 52,
+        "dependency_count_transitive": 360,
+        "total_dependencies": 412,
+        "distinct_licenses_count": 4,
+        "primary_license": "Apache-2.0",
+        "licenses_list": [
+          "Apache-2.0",
+          "BSD-3-Clause",
+          "MIT",
+          "MPL-2.0"
+        ],
+        "openssf_scorecard_avg": 7.2,
+        "slsa_level": 3,
+        "known_cve_count": 2,
+        "active_kev_count": 0,
+        "synthesis_engine": "Google deps.dev v3 API (Transitory / Zero-Clone)",
+        "spec_standards": "CycloneDX 1.5 & SPDX 2.3"
+      },
       "coexistence": {
         "has_multiple_versions": true,
         "resolved_tree": [
