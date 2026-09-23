@@ -1,0 +1,339 @@
+{
+  "catalog": [
+    {
+      "slug": "yaml-in-kubernetes-1-31",
+      "search_query": "What version of YAML is in Kubernetes 1.31?",
+      "category": "Cloud Native & Orchestration",
+      "target_family": "yaml",
+      "host": {
+        "system": "GO",
+        "package_name": "k8s.io/kubernetes",
+        "display_name": "Kubernetes",
+        "version": "v1.31.0",
+        "repo_url": "https://github.com/kubernetes/kubernetes",
+        "docs_url": "https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/",
+        "project_id": "github.com/kubernetes/kubernetes",
+        "runtime_engine": "cri-o / containerd",
+        "published_at": "2024-08-13T07:28:48Z",
+        "licenses": [
+          "Apache-2.0",
+          "BSD-3-Clause",
+          "MIT"
+        ],
+        "advisories": [
+          "GHSA-3wgm-2gw2-vh5m",
+          "GHSA-4x4m-3c2p-qppc",
+          "GHSA-jgfp-53c3-624w",
+          "GHSA-r6j8-c6r2-37rr",
+          "GHSA-vv39-3w5q-974q",
+          "GO-2025-3465",
+          "GO-2025-3521",
+          "GO-2025-3522",
+          "GO-2025-3547",
+          "GO-2025-3915",
+          "GO-2025-4240"
+        ],
+        "openssf_scorecard": {
+          "overall_score": 7.2,
+          "checks": [
+            {
+              "name": "Code-Review",
+              "score": 7
+            },
+            {
+              "name": "Maintained",
+              "score": 10
+            },
+            {
+              "name": "Packaging",
+              "score": -1
+            },
+            {
+              "name": "Dangerous-Workflow",
+              "score": -1
+            },
+            {
+              "name": "Token-Permissions",
+              "score": -1
+            },
+            {
+              "name": "Security-Policy",
+              "score": 10
+            },
+            {
+              "name": "CII-Best-Practices",
+              "score": 5
+            },
+            {
+              "name": "License",
+              "score": 10
+            },
+            {
+              "name": "Branch-Protection",
+              "score": -1
+            },
+            {
+              "name": "Signed-Releases",
+              "score": -1
+            },
+            {
+              "name": "SAST",
+              "score": 0
+            },
+            {
+              "name": "Fuzzing",
+              "score": 10
+            },
+            {
+              "name": "Binary-Artifacts",
+              "score": 10
+            },
+            {
+              "name": "Pinned-Dependencies",
+              "score": 0
+            }
+          ]
+        },
+        "purl": "pkg:golang/k8s.io/kubernetes@v1.31.0"
+      },
+      "target_candidates": [
+        {
+          "system": "GO",
+          "package_name": "sigs.k8s.io/yaml",
+          "version": "v1.4.0",
+          "is_primary": true,
+          "role": "Kubernetes JSON/YAML transcoder and admission boundary",
+          "spec_level": "YAML 1.2 via JSON Transcoding",
+          "repo_url": "https://github.com/kubernetes-sigs/yaml",
+          "project_id": "github.com/kubernetes-sigs/yaml",
+          "published_at": "2023-10-24T17:13:34Z",
+          "licenses": [
+            "MIT",
+            "BSD-3-Clause",
+            "Apache-2.0"
+          ],
+          "advisories": [],
+          "openssf_scorecard": {
+            "overall_score": 5,
+            "checks": [
+              {
+                "name": "Code-Review",
+                "score": 10
+              },
+              {
+                "name": "Binary-Artifacts",
+                "score": 10
+              },
+              {
+                "name": "Maintained",
+                "score": 0
+              },
+              {
+                "name": "Dangerous-Workflow",
+                "score": 10
+              },
+              {
+                "name": "CII-Best-Practices",
+                "score": 0
+              },
+              {
+                "name": "Token-Permissions",
+                "score": 0
+              },
+              {
+                "name": "Packaging",
+                "score": -1
+              },
+              {
+                "name": "Pinned-Dependencies",
+                "score": 0
+              },
+              {
+                "name": "Fuzzing",
+                "score": 0
+              },
+              {
+                "name": "License",
+                "score": 9
+              },
+              {
+                "name": "Signed-Releases",
+                "score": -1
+              },
+              {
+                "name": "Branch-Protection",
+                "score": -1
+              },
+              {
+                "name": "Security-Policy",
+                "score": 10
+              },
+              {
+                "name": "SAST",
+                "score": 0
+              }
+            ]
+          },
+          "purl": "pkg:golang/sigs.k8s.io/yaml@v1.4.0"
+        },
+        {
+          "system": "GO",
+          "package_name": "gopkg.in/yaml.v3",
+          "version": "v3.0.1",
+          "is_primary": false,
+          "role": "Core YAML 1.2 parsing engine with strict duplicate key enforcement",
+          "spec_level": "YAML 1.2 Core",
+          "repo_url": "https://github.com/go-yaml/yaml",
+          "project_id": "github.com/go-yaml/yaml",
+          "published_at": "2022-05-27T08:35:30Z",
+          "licenses": [
+            "MIT",
+            "Apache-2.0"
+          ],
+          "advisories": [],
+          "openssf_scorecard": {
+            "overall_score": 3.8,
+            "checks": [
+              {
+                "name": "Maintained",
+                "score": 0
+              },
+              {
+                "name": "Packaging",
+                "score": -1
+              },
+              {
+                "name": "Code-Review",
+                "score": 2
+              },
+              {
+                "name": "Binary-Artifacts",
+                "score": 10
+              },
+              {
+                "name": "Dangerous-Workflow",
+                "score": 10
+              },
+              {
+                "name": "Token-Permissions",
+                "score": 0
+              },
+              {
+                "name": "Pinned-Dependencies",
+                "score": 3
+              },
+              {
+                "name": "CII-Best-Practices",
+                "score": 0
+              },
+              {
+                "name": "Security-Policy",
+                "score": 0
+              },
+              {
+                "name": "Fuzzing",
+                "score": 10
+              },
+              {
+                "name": "License",
+                "score": 9
+              },
+              {
+                "name": "Signed-Releases",
+                "score": -1
+              },
+              {
+                "name": "Branch-Protection",
+                "score": 0
+              },
+              {
+                "name": "SAST",
+                "score": 0
+              }
+            ]
+          },
+          "purl": "pkg:golang/gopkg.in/yaml.v3@v3.0.1"
+        },
+        {
+          "system": "GO",
+          "package_name": "gopkg.in/yaml.v2",
+          "version": "v2.4.0",
+          "is_primary": false,
+          "role": "Legacy YAML 1.1 parser retained for backwards compatibility across sub-packages",
+          "spec_level": "YAML 1.1 Legacy",
+          "repo_url": "https://github.com/go-yaml/yaml",
+          "project_id": "github.com/go-yaml/yaml",
+          "published_at": "2020-11-17T15:46:20Z",
+          "licenses": [
+            "Apache-2.0"
+          ],
+          "advisories": [],
+          "openssf_scorecard": {
+            "overall_score": 3.8,
+            "checks": [
+              {
+                "name": "Maintained",
+                "score": 0
+              },
+              {
+                "name": "Packaging",
+                "score": -1
+              },
+              {
+                "name": "Code-Review",
+                "score": 2
+              },
+              {
+                "name": "Binary-Artifacts",
+                "score": 10
+              },
+              {
+                "name": "Dangerous-Workflow",
+                "score": 10
+              },
+              {
+                "name": "Token-Permissions",
+                "score": 0
+              },
+              {
+                "name": "Pinned-Dependencies",
+                "score": 3
+              },
+              {
+                "name": "CII-Best-Practices",
+                "score": 0
+              },
+              {
+                "name": "Security-Policy",
+                "score": 0
+              },
+              {
+                "name": "Fuzzing",
+                "score": 10
+              },
+              {
+                "name": "License",
+                "score": 9
+              },
+              {
+                "name": "Signed-Releases",
+                "score": -1
+              },
+              {
+                "name": "Branch-Protection",
+                "score": 0
+              },
+              {
+                "name": "SAST",
+                "score": 0
+              }
+            ]
+          },
+          "purl": "pkg:golang/gopkg.in/yaml.v2@v2.4.0"
+        }
+      ],
+      "cataloged_at": "2026-09-23T18:37:04.339504+00:00"
+    }
+  ],
+  "total_queries": 1
+}
