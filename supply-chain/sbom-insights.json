@@ -4,7 +4,7 @@
       "slug": "yaml-in-kubernetes-1-31",
       "search_query": "What version of YAML is in Kubernetes 1.31?",
       "category": "SBOM Insights",
-      "last_updated": "2026-09-23T19:54:30.763953+00:00",
+      "last_updated": "2026-09-23T19:57:29.797358+00:00",
       "host": {
         "name": "Kubernetes",
         "package_name": "k8s.io/kubernetes",
@@ -258,7 +258,8 @@
           "summary": "Implicit coercion of unquoted country code tokens (e.g. NO) into boolean false in YAML 1.1 parsers.",
           "epss_score": null,
           "epss_percentile": null,
-          "in_cisa_kev": null
+          "in_cisa_kev": null,
+          "mitre_rating": "Likelihood: Low/Medium"
         },
         {
           "fact_id": "CWE-471",
@@ -269,7 +270,8 @@
           "summary": "Shadow key injection where trailing duplicate dictionary keys overwrite earlier security parameters in lax parsers.",
           "epss_score": null,
           "epss_percentile": null,
-          "in_cisa_kev": null
+          "in_cisa_kev": null,
+          "mitre_rating": "Likelihood: Medium"
         },
         {
           "fact_id": "CWE-732",
@@ -280,7 +282,8 @@
           "summary": "Leading-zero octal permission radix interpretation differences in volume mount defaultMode (0755 vs 0o755).",
           "epss_score": null,
           "epss_percentile": null,
-          "in_cisa_kev": null
+          "in_cisa_kev": null,
+          "mitre_rating": "Top 25: #22 (Score 4.88)"
         },
         {
           "fact_id": "CVE-2022-28948",
@@ -291,7 +294,8 @@
           "summary": "Stack exhaustion / crash during untrusted YAML deserialization when resolving deeply nested anchor aliases.",
           "epss_score": 0.0014,
           "epss_percentile": 48.2,
-          "in_cisa_kev": false
+          "in_cisa_kev": false,
+          "mitre_rating": null
         },
         {
           "fact_id": "CVE-2022-3064",
@@ -302,7 +306,8 @@
           "summary": "Excessive memory allocation in legacy yaml.v2 unmarshaler when processing maliciously crafted documents.",
           "epss_score": 0.0021,
           "epss_percentile": 58.6,
-          "in_cisa_kev": false
+          "in_cisa_kev": false,
+          "mitre_rating": null
         }
       ],
       "sbom_snippets": {
