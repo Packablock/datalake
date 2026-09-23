@@ -4,7 +4,7 @@
       "slug": "yaml-in-kubernetes-1-31",
       "search_query": "What version of YAML is in Kubernetes 1.31?",
       "category": "SBOM Insights",
-      "last_updated": "2026-09-23T20:39:30.180387+00:00",
+      "last_updated": "2026-09-23T20:52:15.506236+00:00",
       "host": {
         "name": "Kubernetes",
         "package_name": "k8s.io/kubernetes",
@@ -61,6 +61,8 @@
         "openssf_scorecard_avg": 7.2,
         "slsa_level": 3,
         "known_cve_count": 2,
+        "host_cve_count": 6,
+        "host_advisories_count": 11,
         "active_kev_count": 0,
         "synthesis_engine": "Google deps.dev v3 API (Transitory / Zero-Clone)",
         "spec_standards": "CycloneDX 1.5 & SPDX 2.3"
@@ -260,7 +262,8 @@
           "epss_score": null,
           "epss_percentile": null,
           "in_cisa_kev": null,
-          "mitre_rating": "Likelihood: Low/Medium"
+          "mitre_rating": "Likelihood: Low/Medium",
+          "scope": "target"
         },
         {
           "fact_id": "CWE-471",
@@ -272,7 +275,8 @@
           "epss_score": null,
           "epss_percentile": null,
           "in_cisa_kev": null,
-          "mitre_rating": "Likelihood: Medium"
+          "mitre_rating": "Likelihood: Medium",
+          "scope": "target"
         },
         {
           "fact_id": "CWE-732",
@@ -284,7 +288,8 @@
           "epss_score": null,
           "epss_percentile": null,
           "in_cisa_kev": null,
-          "mitre_rating": "Top 25: #22 (Score 4.88)"
+          "mitre_rating": "Top 25: #22 (Score 4.88)",
+          "scope": "target"
         },
         {
           "fact_id": "CVE-2022-28948",
@@ -296,7 +301,8 @@
           "epss_score": 0.0014,
           "epss_percentile": 48.2,
           "in_cisa_kev": false,
-          "mitre_rating": null
+          "mitre_rating": null,
+          "scope": "target"
         },
         {
           "fact_id": "CVE-2022-3064",
@@ -308,7 +314,86 @@
           "epss_score": 0.0021,
           "epss_percentile": 58.6,
           "in_cisa_kev": false,
-          "mitre_rating": null
+          "mitre_rating": null,
+          "scope": "target"
+        },
+        {
+          "fact_id": "CVE-2024-9042",
+          "authority": "CVE.org",
+          "category": "vulnerability",
+          "title": "CVE-2024-9042: Command Injection on Windows Nodes via nodes/proxy",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-9042",
+          "summary": "Command injection vulnerability affecting Windows nodes via nodes/proxy subresource allows privileged remote code execution.",
+          "epss_score": 0.01371,
+          "epss_percentile": 70.8,
+          "in_cisa_kev": false,
+          "mitre_rating": null,
+          "scope": "host"
+        },
+        {
+          "fact_id": "CVE-2025-1767",
+          "authority": "CVE.org",
+          "category": "vulnerability",
+          "title": "CVE-2025-1767: GitRepo Volume Inadvertent Local Repository Access",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-1767",
+          "summary": "GitRepo volume plugin parameter validation flaw permits unauthorized access to local repositories during volume mounting.",
+          "epss_score": 0.00553,
+          "epss_percentile": 45.1,
+          "in_cisa_kev": false,
+          "mitre_rating": null,
+          "scope": "host"
+        },
+        {
+          "fact_id": "CVE-2025-5187",
+          "authority": "CVE.org",
+          "category": "vulnerability",
+          "title": "CVE-2025-5187: Node Deletion via Malicious OwnerReference Injection",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-5187",
+          "summary": "Garbage collector weakness allows compromised node identities to cause cascading deletion of arbitrary Node objects.",
+          "epss_score": 0.00543,
+          "epss_percentile": 44.5,
+          "in_cisa_kev": false,
+          "mitre_rating": null,
+          "scope": "host"
+        },
+        {
+          "fact_id": "CVE-2025-13281",
+          "authority": "CVE.org",
+          "category": "vulnerability",
+          "title": "CVE-2025-13281: Half-Blind SSRF in kube-controller-manager",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-13281",
+          "summary": "Half-blind Server-Side Request Forgery vulnerability in kube-controller-manager volume lifecycle controller.",
+          "epss_score": 0.00389,
+          "epss_percentile": 32.8,
+          "in_cisa_kev": false,
+          "mitre_rating": null,
+          "scope": "host"
+        },
+        {
+          "fact_id": "CVE-2025-0426",
+          "authority": "CVE.org",
+          "category": "vulnerability",
+          "title": "CVE-2025-0426: Node Denial of Service via Kubelet Checkpoint API",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2025-0426",
+          "summary": "Resource exhaustion flaw in kubelet checkpointing endpoint enables unauthenticated local callers to crash worker node processes.",
+          "epss_score": 0.00372,
+          "epss_percentile": 31.1,
+          "in_cisa_kev": false,
+          "mitre_rating": null,
+          "scope": "host"
+        },
+        {
+          "fact_id": "CVE-2024-7598",
+          "authority": "CVE.org",
+          "category": "vulnerability",
+          "title": "CVE-2024-7598: Race Condition in kube-apiserver Token Caching",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2024-7598",
+          "summary": "Race condition in kube-apiserver webhook token authenticator cache triggers transient authorization drops under concurrency.",
+          "epss_score": 0.00314,
+          "epss_percentile": 24.6,
+          "in_cisa_kev": false,
+          "mitre_rating": null,
+          "scope": "host"
         }
       ],
       "sbom_snippets": {
