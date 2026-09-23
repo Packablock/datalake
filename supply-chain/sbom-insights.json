@@ -4,7 +4,7 @@
       "slug": "yaml-in-kubernetes-1-31",
       "search_query": "What version of YAML is in Kubernetes 1.31?",
       "category": "SBOM Insights",
-      "last_updated": "2026-09-23T20:13:50.059759+00:00",
+      "last_updated": "2026-09-23T20:39:30.180387+00:00",
       "host": {
         "name": "Kubernetes",
         "package_name": "k8s.io/kubernetes",
@@ -44,7 +44,7 @@
       "direct_answer_summary": "Kubernetes v1.31.0 utilizes sigs.k8s.io/yaml v1.4.0 as its primary JSON/YAML transcoder across the API server, kubectl, and kubelet. It enforces YAML 1.2 rules via JSON transcoding while pinning gopkg.in/yaml.v3 v3.0.1 for strict duplicate key rejection.",
       "transitory_sbom": {
         "purl": "pkg:golang/k8s.io/kubernetes@v1.31.0",
-        "deps_dev_url": "https://deps.dev/go/k8s.io%2Fkubernetes/v1.31.0/dependencies",
+        "deps_dev_url": "https://deps.dev/go/k8s.io%2Fkubernetes/v1.31.0",
         "release_date": "2024-08-13",
         "ecosystem": "GO Modules (pkg:go)",
         "dependency_count_direct": 52,
