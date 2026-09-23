@@ -3,7 +3,8 @@
     {
       "slug": "yaml-in-kubernetes-1-31",
       "search_query": "What version of YAML is in Kubernetes 1.31?",
-      "category": "Cloud Native & Orchestration",
+      "category": "SBOM Insights",
+      "resolution_status": "Resolved",
       "target_family": "yaml",
       "host": {
         "system": "GO",
@@ -102,6 +103,7 @@
           "package_name": "sigs.k8s.io/yaml",
           "version": "v1.4.0",
           "is_primary": true,
+          "dependency_type": "Direct Dependency",
           "role": "Kubernetes JSON/YAML transcoder and admission boundary",
           "spec_level": "YAML 1.2 via JSON Transcoding",
           "repo_url": "https://github.com/kubernetes-sigs/yaml",
@@ -181,6 +183,7 @@
           "package_name": "gopkg.in/yaml.v3",
           "version": "v3.0.1",
           "is_primary": false,
+          "dependency_type": "Direct Dependency",
           "role": "Core YAML 1.2 parsing engine with strict duplicate key enforcement",
           "spec_level": "YAML 1.2 Core",
           "repo_url": "https://github.com/go-yaml/yaml",
@@ -259,6 +262,7 @@
           "package_name": "gopkg.in/yaml.v2",
           "version": "v2.4.0",
           "is_primary": false,
+          "dependency_type": "Direct Dependency",
           "role": "Legacy YAML 1.1 parser retained for backwards compatibility across sub-packages",
           "spec_level": "YAML 1.1 Legacy",
           "repo_url": "https://github.com/go-yaml/yaml",
@@ -332,7 +336,7 @@
           "purl": "pkg:golang/gopkg.in/yaml.v2@v2.4.0"
         }
       ],
-      "cataloged_at": "2026-09-23T18:37:04.339504+00:00"
+      "cataloged_at": "2026-09-23T21:17:56.456432+00:00"
     }
   ],
   "total_queries": 1
