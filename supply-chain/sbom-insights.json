@@ -4,7 +4,7 @@
       "slug": "yaml-in-kubernetes-1-31",
       "search_query": "What version of YAML is in Kubernetes 1.31?",
       "category": "SBOM Insights",
-      "last_updated": "2026-09-23T19:36:41.242407+00:00",
+      "last_updated": "2026-09-23T19:43:42.998599+00:00",
       "host": {
         "name": "Kubernetes",
         "package_name": "k8s.io/kubernetes",
@@ -19,8 +19,27 @@
         "primary_library": "sigs.k8s.io/yaml",
         "primary_version": "v1.4.0",
         "primary_purl": "pkg:golang/sigs.k8s.io/yaml@v1.4.0",
+        "primary_dependency_type": "Direct Dependency",
         "specification_standard": "YAML 1.2 via JSON Transcoding",
-        "repo_url": "https://github.com/kubernetes-sigs/yaml"
+        "repo_url": "https://github.com/kubernetes-sigs/yaml",
+        "other_versions": [
+          {
+            "package": "gopkg.in/yaml.v3",
+            "version": "v3.0.1",
+            "purl": "pkg:golang/gopkg.in/yaml.v3@v3.0.1",
+            "dependency_type": "Transitive Dependency",
+            "role": "Core YAML 1.2 parsing engine with strict duplicate key enforcement",
+            "spec_level": "YAML 1.2 Core"
+          },
+          {
+            "package": "gopkg.in/yaml.v2",
+            "version": "v2.4.0",
+            "purl": "pkg:golang/gopkg.in/yaml.v2@v2.4.0",
+            "dependency_type": "Transitive Dependency",
+            "role": "Legacy YAML 1.1 parser retained for backwards compatibility across sub-packages",
+            "spec_level": "YAML 1.1 Legacy"
+          }
+        ]
       },
       "direct_answer_summary": "Kubernetes v1.31.0 utilizes sigs.k8s.io/yaml v1.4.0 as its primary JSON/YAML transcoder across the API server, kubectl, and kubelet. It enforces YAML 1.2 rules via JSON transcoding while pinning gopkg.in/yaml.v3 v3.0.1 for strict duplicate key rejection.",
       "transitory_sbom": {
@@ -60,7 +79,7 @@
             "package": "gopkg.in/yaml.v3",
             "version": "v3.0.1",
             "role": "Core YAML 1.2 parsing engine with strict duplicate key enforcement",
-            "direct_or_transitive": "Coexisting Core Dependency",
+            "direct_or_transitive": "Transitive Dependency",
             "spec_level": "YAML 1.2 Core",
             "purl": "pkg:golang/gopkg.in/yaml.v3@v3.0.1"
           },
@@ -68,7 +87,7 @@
             "package": "gopkg.in/yaml.v2",
             "version": "v2.4.0",
             "role": "Legacy YAML 1.1 parser retained for backwards compatibility across sub-packages",
-            "direct_or_transitive": "Coexisting Core Dependency",
+            "direct_or_transitive": "Transitive Dependency",
             "spec_level": "YAML 1.1 Legacy",
             "purl": "pkg:golang/gopkg.in/yaml.v2@v2.4.0"
           }
