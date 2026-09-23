@@ -4,7 +4,7 @@
       "slug": "yaml-in-kubernetes-1-31",
       "search_query": "What version of YAML is in Kubernetes 1.31?",
       "category": "Cloud Native & Orchestration",
-      "last_updated": "2026-09-23T18:54:20.342095+00:00",
+      "last_updated": "2026-09-23T19:00:51.502306+00:00",
       "host": {
         "name": "Kubernetes",
         "package_name": "k8s.io/kubernetes",
@@ -91,7 +91,9 @@
         "reachability_classification": "Production Reachable (API server admission & kubelet control loop)",
         "slsa_level": 3,
         "verified_provenance": true,
-        "reachability_rationale": "Evaluated under EU CRA Article 10/11: sigs.k8s.io/yaml is directly reachable in core production binaries; hazardous unquoted type coercions are systematically eliminated through mandatory JSON transcoding."
+        "reachability_rationale": "Evaluated under EU CRA Article 10/11: sigs.k8s.io/yaml is directly reachable in core production binaries; hazardous unquoted type coercions are systematically eliminated through mandatory JSON transcoding.",
+        "enisa_sector": "Digital Infrastructure & Cloud Services",
+        "nis2_scope": "Essential (Annex I - Article 21)"
       },
       "threat_intelligence": {
         "known_cve_count": 2,
@@ -175,6 +177,64 @@
           ]
         }
       },
+      "verified_facts": [
+        {
+          "fact_id": "CWE-704",
+          "authority": "MITRE",
+          "category": "weakness",
+          "title": "CWE-704: Incorrect Type Conversion or Cast",
+          "url": "https://cwe.mitre.org/data/definitions/704.html",
+          "summary": "Implicit coercion of unquoted country code tokens (e.g. NO) into boolean false in YAML 1.1 parsers."
+        },
+        {
+          "fact_id": "CWE-471",
+          "authority": "MITRE",
+          "category": "weakness",
+          "title": "CWE-471: Modification of Assumed-Immutable Data (Duplicate Map Keys)",
+          "url": "https://cwe.mitre.org/data/definitions/471.html",
+          "summary": "Shadow key injection where trailing duplicate dictionary keys overwrite earlier security parameters in lax parsers."
+        },
+        {
+          "fact_id": "CWE-732",
+          "authority": "MITRE",
+          "category": "weakness",
+          "title": "CWE-732: Incorrect Permission Assignment for Critical Resource",
+          "url": "https://cwe.mitre.org/data/definitions/732.html",
+          "summary": "Leading-zero octal permission radix interpretation differences in volume mount defaultMode (0755 vs 0o755)."
+        },
+        {
+          "fact_id": "CVE-2022-28948",
+          "authority": "CVE.org",
+          "category": "vulnerability",
+          "title": "CVE-2022-28948: gopkg.in/yaml.v3 Alias Resolution Crash",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-28948",
+          "summary": "Stack exhaustion / crash during untrusted YAML deserialization when resolving deeply nested anchor aliases."
+        },
+        {
+          "fact_id": "CVE-2022-3064",
+          "authority": "CVE.org",
+          "category": "vulnerability",
+          "title": "CVE-2022-3064: gopkg.in/yaml.v2 Memory Consumption",
+          "url": "https://www.cve.org/CVERecord?id=CVE-2022-3064",
+          "summary": "Excessive memory allocation in legacy yaml.v2 unmarshaler when processing maliciously crafted documents."
+        },
+        {
+          "fact_id": "CISA-KEV-STATUS",
+          "authority": "CISA",
+          "category": "threat_telemetry",
+          "title": "CISA KEV Weaponization Status: Clean",
+          "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+          "summary": "Zero active weaponized exploitation campaigns or ransomware playbooks recorded in CISA KEV catalog."
+        },
+        {
+          "fact_id": "ENISA-ETL-2026-CLOUD",
+          "authority": "ENISA",
+          "category": "statutory",
+          "title": "ENISA Threat Landscape 2026: Digital Infrastructure & Cloud Services",
+          "url": "https://www.enisa.europa.eu/publications/enisa-threat-landscape-2026",
+          "summary": "Cloud infrastructure benchmarks evaluate a 12.3% supply chain intrusion rate, mandating strict software bill of materials under NIS2 Article 21(2)(d)."
+        }
+      ],
       "sbom_snippets": {
         "cyclonedx_component": {
           "type": "library",
