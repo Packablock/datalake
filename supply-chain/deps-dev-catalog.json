@@ -104,7 +104,8 @@
           "version": "v1.4.0",
           "is_primary": true,
           "dependency_type": "Direct Dependency",
-          "role": "Kubernetes JSON/YAML transcoder and admission boundary",
+          "importer_count": 1,
+          "role": "Kubernetes YAML-to-JSON manifest converter and admission boundary",
           "spec_level": "YAML 1.2 via JSON Transcoding",
           "repo_url": "https://github.com/kubernetes-sigs/yaml",
           "project_id": "github.com/kubernetes-sigs/yaml",
@@ -184,6 +185,7 @@
           "version": "v3.0.1",
           "is_primary": false,
           "dependency_type": "Direct Dependency",
+          "importer_count": 2,
           "role": "Core YAML 1.2 parsing engine with strict duplicate key enforcement",
           "spec_level": "YAML 1.2 Core",
           "repo_url": "https://github.com/go-yaml/yaml",
@@ -262,7 +264,8 @@
           "package_name": "gopkg.in/yaml.v2",
           "version": "v2.4.0",
           "is_primary": false,
-          "dependency_type": "Direct Dependency",
+          "dependency_type": "Transitive Dependency",
+          "importer_count": 14,
           "role": "Legacy YAML 1.1 parser retained for backwards compatibility across sub-packages",
           "spec_level": "YAML 1.1 Legacy",
           "repo_url": "https://github.com/go-yaml/yaml",
@@ -336,8 +339,330 @@
           "purl": "pkg:golang/gopkg.in/yaml.v2@v2.4.0"
         }
       ],
-      "cataloged_at": "2026-09-23T21:17:56.456432+00:00"
+      "cataloged_at": "2026-09-24T22:35:56.024832+00:00"
+    },
+    {
+      "slug": "openssl-in-nodejs-22",
+      "search_query": "What version of OpenSSL is in Node.js 22 LTS?",
+      "category": "SBOM Insights",
+      "resolution_status": "Undetermined",
+      "target_family": "openssl",
+      "host": {
+        "system": "GENERIC",
+        "package_name": "nodejs/node",
+        "display_name": "Node.js",
+        "version": "v22.6.0",
+        "repo_url": "https://github.com/nodejs/node",
+        "docs_url": "https://nodejs.org/docs/latest-v22.x/api/crypto.html",
+        "project_id": "github.com/nodejs/node",
+        "runtime_engine": "V8 / libuv",
+        "published_at": null,
+        "licenses": [],
+        "advisories": [],
+        "openssf_scorecard": {
+          "overall_score": 6,
+          "checks": [
+            {
+              "name": "Maintained",
+              "score": 10
+            },
+            {
+              "name": "Code-Review",
+              "score": 6
+            },
+            {
+              "name": "CII-Best-Practices",
+              "score": 5
+            },
+            {
+              "name": "Packaging",
+              "score": -1
+            },
+            {
+              "name": "Security-Policy",
+              "score": 10
+            },
+            {
+              "name": "Dangerous-Workflow",
+              "score": 10
+            },
+            {
+              "name": "License",
+              "score": 9
+            },
+            {
+              "name": "Signed-Releases",
+              "score": -1
+            },
+            {
+              "name": "Branch-Protection",
+              "score": 1
+            },
+            {
+              "name": "Token-Permissions",
+              "score": 0
+            },
+            {
+              "name": "SAST",
+              "score": 7
+            },
+            {
+              "name": "Binary-Artifacts",
+              "score": 0
+            },
+            {
+              "name": "Pinned-Dependencies",
+              "score": 8
+            },
+            {
+              "name": "Fuzzing",
+              "score": 10
+            }
+          ]
+        },
+        "purl": "pkg:generic/nodejs/node@v22.6.0"
+      },
+      "target_candidates": [
+        {
+          "system": "GENERIC",
+          "package_name": "openssl",
+          "version": "3.0.13+quic",
+          "is_primary": false,
+          "dependency_type": "Direct Dependency",
+          "importer_count": 1,
+          "linkage_type": "statically_linked",
+          "linkage_summary": "Statically linked core engine",
+          "role": "Embedded OpenSSL 3.0 cryptographic engine with QUIC API extensions and default provider",
+          "spec_level": "OpenSSL 3.0 (FIPS 140-2 Cryptographic Architecture)",
+          "repo_url": "https://github.com/openssl/openssl",
+          "project_id": "github.com/openssl/openssl",
+          "published_at": null,
+          "licenses": [],
+          "advisories": [],
+          "openssf_scorecard": {
+            "overall_score": 6.3,
+            "checks": [
+              {
+                "name": "Packaging",
+                "score": -1
+              },
+              {
+                "name": "Dangerous-Workflow",
+                "score": -1
+              },
+              {
+                "name": "Code-Review",
+                "score": 0
+              },
+              {
+                "name": "Token-Permissions",
+                "score": -1
+              },
+              {
+                "name": "Maintained",
+                "score": 10
+              },
+              {
+                "name": "CII-Best-Practices",
+                "score": 5
+              },
+              {
+                "name": "License",
+                "score": 10
+              },
+              {
+                "name": "SAST",
+                "score": 0
+              },
+              {
+                "name": "Branch-Protection",
+                "score": -1
+              },
+              {
+                "name": "Binary-Artifacts",
+                "score": 10
+              },
+              {
+                "name": "Signed-Releases",
+                "score": 8
+              },
+              {
+                "name": "Fuzzing",
+                "score": 10
+              },
+              {
+                "name": "Security-Policy",
+                "score": 10
+              },
+              {
+                "name": "Pinned-Dependencies",
+                "score": 0
+              }
+            ]
+          },
+          "purl": "pkg:generic/openssl@3.0.13+quic"
+        },
+        {
+          "system": "GENERIC",
+          "package_name": "openssl-legacy-provider",
+          "version": "3.0.13",
+          "is_primary": false,
+          "dependency_type": "Direct Dependency",
+          "importer_count": 1,
+          "linkage_type": "statically_linked",
+          "linkage_summary": "Direct core provider module",
+          "role": "Legacy cryptographic provider for deprecated legacy ciphers (MD4, RC4, Blowfish, DES)",
+          "spec_level": "OpenSSL 3.0 Legacy Provider Architecture",
+          "repo_url": "https://github.com/openssl/openssl",
+          "project_id": "github.com/openssl/openssl",
+          "published_at": null,
+          "licenses": [],
+          "advisories": [],
+          "openssf_scorecard": {
+            "overall_score": 6.3,
+            "checks": [
+              {
+                "name": "Packaging",
+                "score": -1
+              },
+              {
+                "name": "Dangerous-Workflow",
+                "score": -1
+              },
+              {
+                "name": "Code-Review",
+                "score": 0
+              },
+              {
+                "name": "Token-Permissions",
+                "score": -1
+              },
+              {
+                "name": "Maintained",
+                "score": 10
+              },
+              {
+                "name": "CII-Best-Practices",
+                "score": 5
+              },
+              {
+                "name": "License",
+                "score": 10
+              },
+              {
+                "name": "SAST",
+                "score": 0
+              },
+              {
+                "name": "Branch-Protection",
+                "score": -1
+              },
+              {
+                "name": "Binary-Artifacts",
+                "score": 10
+              },
+              {
+                "name": "Signed-Releases",
+                "score": 8
+              },
+              {
+                "name": "Fuzzing",
+                "score": 10
+              },
+              {
+                "name": "Security-Policy",
+                "score": 10
+              },
+              {
+                "name": "Pinned-Dependencies",
+                "score": 0
+              }
+            ]
+          },
+          "purl": "pkg:generic/openssl-legacy-provider@3.0.13"
+        },
+        {
+          "system": "GENERIC",
+          "package_name": "libcrypto.so.3",
+          "version": "3.0.x",
+          "is_primary": false,
+          "dependency_type": "Transitive Dependency",
+          "importer_count": 4,
+          "linkage_type": "dynamically_linked",
+          "linkage_summary": "Dynamic host ABI boundary",
+          "role": "Host operating system dynamic shared crypto library providing ABI collision boundary for native C++ addons",
+          "spec_level": "System Shared Object (ELF / Mach-O)",
+          "repo_url": "https://github.com/openssl/openssl",
+          "project_id": "github.com/openssl/openssl",
+          "published_at": null,
+          "licenses": [],
+          "advisories": [],
+          "openssf_scorecard": {
+            "overall_score": 6.3,
+            "checks": [
+              {
+                "name": "Packaging",
+                "score": -1
+              },
+              {
+                "name": "Dangerous-Workflow",
+                "score": -1
+              },
+              {
+                "name": "Code-Review",
+                "score": 0
+              },
+              {
+                "name": "Token-Permissions",
+                "score": -1
+              },
+              {
+                "name": "Maintained",
+                "score": 10
+              },
+              {
+                "name": "CII-Best-Practices",
+                "score": 5
+              },
+              {
+                "name": "License",
+                "score": 10
+              },
+              {
+                "name": "SAST",
+                "score": 0
+              },
+              {
+                "name": "Branch-Protection",
+                "score": -1
+              },
+              {
+                "name": "Binary-Artifacts",
+                "score": 10
+              },
+              {
+                "name": "Signed-Releases",
+                "score": 8
+              },
+              {
+                "name": "Fuzzing",
+                "score": 10
+              },
+              {
+                "name": "Security-Policy",
+                "score": 10
+              },
+              {
+                "name": "Pinned-Dependencies",
+                "score": 0
+              }
+            ]
+          },
+          "purl": "pkg:generic/libcrypto.so.3@3.0.x"
+        }
+      ],
+      "cataloged_at": "2026-09-24T22:35:56.463224+00:00"
     }
   ],
-  "total_queries": 1
+  "total_queries": 2
 }
