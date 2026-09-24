@@ -6,7 +6,7 @@
       "category": "SBOM Insights",
       "target_family": "yaml",
       "resolution_status": "Resolved",
-      "last_updated": "2026-09-24T19:39:12.263554+00:00",
+      "last_updated": "2026-09-24T22:06:41.736537+00:00",
       "host": {
         "name": "Kubernetes",
         "package_name": "k8s.io/kubernetes",
@@ -24,6 +24,8 @@
         "primary_purl": "pkg:golang/sigs.k8s.io/yaml@v1.4.0",
         "primary_dependency_type": "Direct Dependency",
         "importer_count": 1,
+        "linkage_type": "root_manifest",
+        "linkage_summary": "Direct root manifest dependency",
         "tier": "tier_1_user_entrypoint",
         "role_classification": "Canonical User Entry Point (kubectl CLI & API Admission)",
         "entrypoint_trigger": "kubectl apply -f <manifest.yaml> & Admission Webhooks",
@@ -36,6 +38,8 @@
             "purl": "pkg:golang/gopkg.in/yaml.v3@v3.0.1",
             "dependency_type": "Direct Dependency",
             "importer_count": 2,
+            "linkage_type": "direct_subdependency",
+            "linkage_summary": "Imported by 2 internal packages",
             "tier": "tier_2_internal_engine",
             "tier_label": "Internal AST Engine",
             "role": "Core YAML 1.2 parsing engine with strict duplicate key enforcement",
@@ -47,6 +51,8 @@
             "purl": "pkg:golang/gopkg.in/yaml.v2@v2.4.0",
             "dependency_type": "Transitive Dependency",
             "importer_count": 14,
+            "linkage_type": "transitive_graph",
+            "linkage_summary": "Imported transitively by 14 sub-dependencies",
             "tier": "tier_3_legacy_compat",
             "tier_label": "Legacy Compatibility",
             "role": "Legacy YAML 1.1 parser retained for backwards compatibility across sub-packages",
@@ -77,7 +83,14 @@
         "host_advisories_count": 11,
         "active_kev_count": 0,
         "synthesis_engine": "Google deps.dev v3 API (Transitory / Zero-Clone)",
-        "spec_standards": "CycloneDX 1.5 & SPDX 2.3"
+        "spec_standards": "CycloneDX 1.5 & SPDX 2.3",
+        "api_endpoint_url": "https://api.deps.dev/v3/systems/go/packages/k8s.io%2Fkubernetes/versions/v1.31.0",
+        "sbom_download_url": "https://sbom.k8s.io/v1.31.0/release",
+        "upstream_manifest_url": "https://raw.githubusercontent.com/kubernetes/kubernetes/v1.31.0/go.mod",
+        "github_release_url": null,
+        "sbom_found": true,
+        "sbom_status": "Authoritative (Published)",
+        "provenance_note": "Authoritative SPDX 2.3 SBOM published directly by upstream Kubernetes release engineering at sbom.k8s.io."
       },
       "coexistence": {
         "has_multiple_versions": true,
@@ -89,7 +102,9 @@
             "direct_or_transitive": "Direct Dependency",
             "spec_level": "YAML 1.2 via JSON Transcoding",
             "purl": "pkg:golang/sigs.k8s.io/yaml@v1.4.0",
-            "importer_count": 1
+            "importer_count": 1,
+            "linkage_type": "root_manifest",
+            "linkage_summary": "Direct root manifest dependency"
           },
           {
             "package": "gopkg.in/yaml.v3",
@@ -98,7 +113,9 @@
             "direct_or_transitive": "Direct Dependency",
             "spec_level": "YAML 1.2 Core",
             "purl": "pkg:golang/gopkg.in/yaml.v3@v3.0.1",
-            "importer_count": 2
+            "importer_count": 2,
+            "linkage_type": "transitive_graph",
+            "linkage_summary": "Imported transitively by 2 sub-dependencies"
           },
           {
             "package": "gopkg.in/yaml.v2",
@@ -107,7 +124,9 @@
             "direct_or_transitive": "Transitive Dependency",
             "spec_level": "YAML 1.1 Legacy",
             "purl": "pkg:golang/gopkg.in/yaml.v2@v2.4.0",
-            "importer_count": 14
+            "importer_count": 14,
+            "linkage_type": "transitive_graph",
+            "linkage_summary": "Imported transitively by 14 sub-dependencies"
           }
         ],
         "divergence_analysis": "Kubernetes 1.31 resolves YAML parsing through a dual-parser architecture. At the admission control and API boundary, sigs.k8s.io/yaml v1.4.0 acts as a strict bridge by transcoding YAML manifests into intermediate JSON representations before schema deserialization. This enforces YAML 1.2 plain-string semantics and neutralizes the Norway problem. Concurrently, gopkg.in/yaml.v3 v3.0.1 is integrated to provide strict duplicate key rejection, while legacy gopkg.in/yaml.v2 v2.4.0 remains pinned transitively across auxiliary CLI sub-packages, creating subtle parser divergence risks if external CRD operators bypass the standard sigs.k8s.io/yaml pipeline.",
@@ -473,7 +492,7 @@
       "category": "SBOM Insights",
       "target_family": "openssl",
       "resolution_status": "Resolved",
-      "last_updated": "2026-09-24T19:39:12.263843+00:00",
+      "last_updated": "2026-09-24T22:06:41.916904+00:00",
       "host": {
         "name": "Node.js",
         "package_name": "nodejs/node",
@@ -491,6 +510,8 @@
         "primary_purl": "pkg:generic/openssl@3.0.13+quic",
         "primary_dependency_type": "Direct Dependency",
         "importer_count": 1,
+        "linkage_type": "statically_linked",
+        "linkage_summary": "Statically linked core engine",
         "tier": "tier_1_user_entrypoint",
         "role_classification": "Canonical Cryptographic Engine & TLS Runtime (node:crypto & TLS 1.3)",
         "entrypoint_trigger": "require('crypto') / TLS Server Initialization",
@@ -503,6 +524,8 @@
             "purl": "pkg:generic/openssl-legacy-provider@3.0.13",
             "dependency_type": "Direct Dependency",
             "importer_count": 1,
+            "linkage_type": "statically_linked",
+            "linkage_summary": "Direct core provider module",
             "tier": "tier_2_internal_engine",
             "tier_label": "Legacy Provider Architecture",
             "role": "Legacy cryptographic provider for deprecated legacy ciphers (MD4, RC4, Blowfish, DES)",
@@ -514,6 +537,8 @@
             "purl": "pkg:generic/libcrypto.so.3@3.0.x",
             "dependency_type": "Transitive Dependency",
             "importer_count": 4,
+            "linkage_type": "dynamically_linked",
+            "linkage_summary": "Dynamic host ABI boundary",
             "tier": "tier_3_legacy_compat",
             "tier_label": "System Shared Library ABI",
             "role": "Host operating system dynamic shared crypto library providing ABI collision boundary for native C++ addons",
@@ -546,7 +571,14 @@
         "host_advisories_count": 6,
         "active_kev_count": 0,
         "synthesis_engine": "Google deps.dev v3 API (Transitory / Zero-Clone)",
-        "spec_standards": "CycloneDX 1.5 & SPDX 2.3"
+        "spec_standards": "CycloneDX 1.5 & SPDX 2.3",
+        "api_endpoint_url": "https://api.deps.dev/v3/projects/github.com%2Fnodejs%2Fnode",
+        "sbom_download_url": null,
+        "upstream_manifest_url": null,
+        "github_release_url": "https://github.com/nodejs/node/releases/tag/v22.6.0",
+        "sbom_found": false,
+        "sbom_status": "Synthesized (No Upstream SBOM Found)",
+        "provenance_note": "No authoritative upstream SBOM published for Node.js v22.6.0. Baseline deterministically synthesized from Google deps.dev dependency graph and verified source tree citations."
       },
       "coexistence": {
         "has_multiple_versions": true,
@@ -558,7 +590,9 @@
             "direct_or_transitive": "Direct Dependency",
             "spec_level": "OpenSSL 3.0 (FIPS 140-2 Cryptographic Architecture)",
             "purl": "pkg:generic/openssl@3.0.13+quic",
-            "importer_count": 1
+            "importer_count": 1,
+            "linkage_type": "statically_linked",
+            "linkage_summary": "Statically linked core engine"
           },
           {
             "package": "openssl-legacy-provider",
@@ -567,7 +601,9 @@
             "direct_or_transitive": "Direct Dependency",
             "spec_level": "OpenSSL 3.0 Legacy Provider Architecture",
             "purl": "pkg:generic/openssl-legacy-provider@3.0.13",
-            "importer_count": 1
+            "importer_count": 1,
+            "linkage_type": "statically_linked",
+            "linkage_summary": "Direct core provider module"
           },
           {
             "package": "libcrypto.so.3",
@@ -576,7 +612,9 @@
             "direct_or_transitive": "Transitive Dependency",
             "spec_level": "System Shared Object (ELF / Mach-O)",
             "purl": "pkg:generic/libcrypto.so.3@3.0.x",
-            "importer_count": 4
+            "importer_count": 4,
+            "linkage_type": "dynamically_linked",
+            "linkage_summary": "Dynamic host ABI boundary"
           }
         ],
         "divergence_analysis": "Node.js 22 LTS statically embeds OpenSSL 3.0.13 with specialized QUIC API extensions directly into its core binary (`deps/openssl/openssl`). Unlike prior Node.js LTS releases that utilized OpenSSL 1.1 or monolithic provider setups, Node.js 22 operates under OpenSSL 3.0's modular Provider Architecture. Legacy cryptographic algorithms (MD4, RC4, DES, Blowfish) are isolated into a separate legacy provider (`legacy.so`), causing unhandled `ERR_OSSL_EVP_UNSUPPORTED` runtime exceptions unless `--openssl-legacy-provider` is explicitly enabled. Furthermore, when native C++ npm addons (`node-gyp`) dynamically link against host operating system libraries (`libcrypto.so.3` or legacy OpenSSL 1.1), dual-engine symbol collisions and ABI divergence can trigger fatal segmentation faults during EVP cipher context handoffs.",
