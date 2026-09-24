@@ -6,7 +6,7 @@
       "category": "SBOM Insights",
       "target_family": "yaml",
       "resolution_status": "Resolved",
-      "last_updated": "2026-09-24T17:31:50.217332+00:00",
+      "last_updated": "2026-09-24T19:39:12.263554+00:00",
       "host": {
         "name": "Kubernetes",
         "package_name": "k8s.io/kubernetes",
@@ -141,6 +141,22 @@
             "code_bad": "volumes:\n  - name: config\n    configMap:\n      defaultMode: 0755  # Decimal 493 in YAML 1.1 vs 755 in JSON mode",
             "code_good": "volumes:\n  - name: config\n    configMap:\n      defaultMode: 0o755  # Explicit octal notation",
             "impact": "Incorrect filesystem permissions applied to mounted volumes in Pod specs when different YAML specifications are cross-compiled."
+          }
+        ],
+        "citations": [
+          {
+            "statement": "sigs.k8s.io/yaml acts as an intermediate transcoding bridge, converting YAML documents into JSON before unmarshaling into Go structs using standard encoding/json tags.",
+            "authority": "Kubernetes SIGs",
+            "document_title": "sigs.k8s.io/yaml Package Documentation & Specification",
+            "url": "https://pkg.go.dev/sigs.k8s.io/yaml",
+            "quote": "Unmarshal converts YAML to JSON then uses json.Unmarshal, ensuring consistent serialization behavior with Kubernetes API server JSON representations."
+          },
+          {
+            "statement": "gopkg.in/yaml.v3 enforces strict duplicate map key rejection during decoding to prevent ambiguous schema overrides and shadow configuration vulnerabilities.",
+            "authority": "Go-YAML / Canonical",
+            "document_title": "gopkg.in/yaml.v3 Package Documentation & Specification",
+            "url": "https://pkg.go.dev/gopkg.in/yaml.v3",
+            "quote": "yaml.v3 enforces strict duplicate key rejection during mapping unmarshaling to prevent silent overwrite vulnerabilities."
           }
         ]
       },
@@ -457,7 +473,7 @@
       "category": "SBOM Insights",
       "target_family": "openssl",
       "resolution_status": "Resolved",
-      "last_updated": "2026-09-24T17:31:50.217528+00:00",
+      "last_updated": "2026-09-24T19:39:12.263843+00:00",
       "host": {
         "name": "Node.js",
         "package_name": "nodejs/node",
@@ -594,6 +610,22 @@
             "code_bad": "const nonce = 9007199254740993; // Exceeds Number.MAX_SAFE_INTEGER, truncated to 9007199254740992",
             "code_good": "const nonce = BigInt(\"9007199254740993\"); // Or serialize 64-bit nonces as strings",
             "impact": "Silent cryptographic nonce collisions or replay protection bypass caused by truncated 64-bit integer values."
+          }
+        ],
+        "citations": [
+          {
+            "statement": "Legacy cryptographic algorithms (MD2, MD4, RC4, DES, Blowfish) are disabled by default in OpenSSL 3.0 and isolated into a dedicated legacy provider module.",
+            "authority": "OpenSSL Foundation",
+            "document_title": "OpenSSL 3.0 Migration Guide (migration_guide(7))",
+            "url": "https://www.openssl.org/docs/man3.0/man7/migration_guide.html",
+            "quote": "Legacy algorithms such as MD2, MD4, RC4, DES, and CAST5 are no longer loaded by default. To use them, applications must explicitly load the legacy provider."
+          },
+          {
+            "statement": "Node.js 17+ and Node.js 22 LTS require the explicit CLI flag --openssl-legacy-provider to re-enable legacy cryptographic algorithms, failing with ERR_OSSL_EVP_UNSUPPORTED otherwise.",
+            "authority": "Node.js Project",
+            "document_title": "Node.js Command-Line Options: --openssl-legacy-provider",
+            "url": "https://nodejs.org/api/cli.html#--openssl-legacy-provider",
+            "quote": "Enable OpenSSL 3.0 legacy provider to restore legacy algorithms disabled by default."
           }
         ]
       },
