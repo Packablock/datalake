@@ -6,7 +6,7 @@
       "category": "SBOM Insights",
       "target_family": "yaml",
       "resolution_status": "Resolved",
-      "last_updated": "2026-09-24T22:19:36.428763+00:00",
+      "last_updated": "2026-09-24T22:26:33.947858+00:00",
       "host": {
         "name": "Kubernetes",
         "package_name": "k8s.io/kubernetes",
@@ -492,7 +492,7 @@
       "category": "SBOM Insights",
       "target_family": "openssl",
       "resolution_status": "Resolved",
-      "last_updated": "2026-09-24T22:19:36.868460+00:00",
+      "last_updated": "2026-09-24T22:26:34.398165+00:00",
       "host": {
         "name": "Node.js",
         "package_name": "nodejs/node",
