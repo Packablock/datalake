@@ -6,7 +6,7 @@
       "category": "SBOM Insights",
       "target_family": "yaml",
       "resolution_status": "Resolved",
-      "last_updated": "2026-09-29T02:00:23.451844+00:00",
+      "last_updated": "2026-09-30T02:00:22.904858+00:00",
       "host": {
         "name": "Kubernetes",
         "package_name": "k8s.io/kubernetes",
@@ -492,7 +492,7 @@
       "category": "SBOM Insights",
       "target_family": "openssl",
       "resolution_status": "Resolved",
-      "last_updated": "2026-09-29T02:00:24.658175+00:00",
+      "last_updated": "2026-09-30T02:00:24.314214+00:00",
       "host": {
         "name": "Node.js",
         "package_name": "nodejs/node",
@@ -946,7 +946,7 @@
       "category": "SBOM Insights",
       "target_family": "openssl",
       "resolution_status": "Resolved",
-      "last_updated": "2026-09-29T02:00:26.706485+00:00",
+      "last_updated": "2026-09-30T02:00:26.544690+00:00",
       "host": {
         "name": "Python",
         "package_name": "python/cpython",
@@ -1157,7 +1157,7 @@
             "cve_url": "https://www.cve.org/CVERecord?id=CVE-2023-40217",
             "in_cisa_kev": false,
             "epss_score": 0.00797,
-            "epss_percentile": 54.7,
+            "epss_percentile": 54.8,
             "reachability": "Guarded: TLS handshake bypass on client sockets is mitigated by default certificate verification and post-handshake close semantics."
           },
           {
@@ -1295,7 +1295,7 @@
           "url": "https://www.cve.org/CVERecord?id=CVE-2023-40217",
           "summary": "TLS handshake bypass vulnerability in ssl socket handling where closing before handshake completion could leak unencrypted buffers.",
           "epss_score": 0.00797,
-          "epss_percentile": 54.7,
+          "epss_percentile": 54.8,
           "in_cisa_kev": false,
           "mitre_rating": null,
           "scope": "host"
