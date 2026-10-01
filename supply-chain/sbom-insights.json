@@ -6,7 +6,7 @@
       "category": "SBOM Insights",
       "target_family": "yaml",
       "resolution_status": "Resolved",
-      "last_updated": "2026-09-30T02:00:22.904858+00:00",
+      "last_updated": "2026-10-01T02:00:24.408507+00:00",
       "host": {
         "name": "Kubernetes",
         "package_name": "k8s.io/kubernetes",
@@ -492,7 +492,7 @@
       "category": "SBOM Insights",
       "target_family": "openssl",
       "resolution_status": "Resolved",
-      "last_updated": "2026-09-30T02:00:24.314214+00:00",
+      "last_updated": "2026-10-01T02:00:26.292919+00:00",
       "host": {
         "name": "Node.js",
         "package_name": "nodejs/node",
@@ -946,7 +946,7 @@
       "category": "SBOM Insights",
       "target_family": "openssl",
       "resolution_status": "Resolved",
-      "last_updated": "2026-09-30T02:00:26.544690+00:00",
+      "last_updated": "2026-10-01T02:00:28.632745+00:00",
       "host": {
         "name": "Python",
         "package_name": "python/cpython",
