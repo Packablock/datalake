@@ -6,7 +6,7 @@
       "category": "SBOM Insights",
       "target_family": "yaml",
       "resolution_status": "Resolved",
-      "last_updated": "2026-10-01T02:00:24.408507+00:00",
+      "last_updated": "2026-10-02T02:00:26.462308+00:00",
       "host": {
         "name": "Kubernetes",
         "package_name": "k8s.io/kubernetes",
@@ -226,7 +226,7 @@
             "cve_url": "https://www.cve.org/CVERecord?id=CVE-2022-3064",
             "in_cisa_kev": false,
             "epss_score": 0.017,
-            "epss_percentile": 76.3,
+            "epss_percentile": 76.4,
             "reachability": "Guarded: Uncontrolled memory consumption in yaml.v2 parsing is not reachable in default API server admission pipelines."
           }
         ],
@@ -353,7 +353,7 @@
           "url": "https://www.cve.org/CVERecord?id=CVE-2022-3064",
           "summary": "Excessive memory allocation in legacy yaml.v2 unmarshaler when processing maliciously crafted documents.",
           "epss_score": 0.017,
-          "epss_percentile": 76.3,
+          "epss_percentile": 76.4,
           "in_cisa_kev": false,
           "mitre_rating": null,
           "scope": "target"
@@ -492,7 +492,7 @@
       "category": "SBOM Insights",
       "target_family": "openssl",
       "resolution_status": "Resolved",
-      "last_updated": "2026-10-01T02:00:26.292919+00:00",
+      "last_updated": "2026-10-02T02:00:27.847959+00:00",
       "host": {
         "name": "Node.js",
         "package_name": "nodejs/node",
@@ -714,7 +714,7 @@
             "cve_url": "https://www.cve.org/CVERecord?id=CVE-2024-4603",
             "in_cisa_kev": false,
             "epss_score": 0.01131,
-            "epss_percentile": 65.1,
+            "epss_percentile": 65.2,
             "reachability": "Guarded: DSA is disabled by default in modern Node.js TLS configurations."
           },
           {
@@ -722,7 +722,7 @@
             "cve_url": "https://www.cve.org/CVERecord?id=CVE-2024-4741",
             "in_cisa_kev": false,
             "epss_score": 0.02925,
-            "epss_percentile": 86.5,
+            "epss_percentile": 86.6,
             "reachability": "Production Reachable: Affects applications enabling buffer releasing under high-concurrency TLS termination."
           }
         ],
@@ -849,7 +849,7 @@
           "url": "https://www.cve.org/CVERecord?id=CVE-2024-4603",
           "summary": "Denial of service via excessive computational resource consumption during validation of overly long DSA keys in OpenSSL.",
           "epss_score": 0.01131,
-          "epss_percentile": 65.1,
+          "epss_percentile": 65.2,
           "in_cisa_kev": false,
           "mitre_rating": null,
           "scope": "target"
@@ -862,7 +862,7 @@
           "url": "https://www.cve.org/CVERecord?id=CVE-2024-4741",
           "summary": "Use-after-free vulnerability in OpenSSL when freeing buffers after handling incoming TLS network traffic.",
           "epss_score": 0.02925,
-          "epss_percentile": 86.5,
+          "epss_percentile": 86.6,
           "in_cisa_kev": false,
           "mitre_rating": null,
           "scope": "target"
@@ -946,7 +946,7 @@
       "category": "SBOM Insights",
       "target_family": "openssl",
       "resolution_status": "Resolved",
-      "last_updated": "2026-10-01T02:00:28.632745+00:00",
+      "last_updated": "2026-10-02T02:00:30.048091+00:00",
       "host": {
         "name": "Python",
         "package_name": "python/cpython",
@@ -1149,7 +1149,7 @@
             "cve_url": "https://www.cve.org/CVERecord?id=CVE-2024-0397",
             "in_cisa_kev": false,
             "epss_score": 0.0081,
-            "epss_percentile": 55.2,
+            "epss_percentile": 55.4,
             "reachability": "Production Reachable: Affects multithreaded Python applications dynamically modifying SSLContext certificate stores."
           },
           {
@@ -1157,7 +1157,7 @@
             "cve_url": "https://www.cve.org/CVERecord?id=CVE-2023-40217",
             "in_cisa_kev": false,
             "epss_score": 0.00797,
-            "epss_percentile": 54.8,
+            "epss_percentile": 54.9,
             "reachability": "Guarded: TLS handshake bypass on client sockets is mitigated by default certificate verification and post-handshake close semantics."
           },
           {
@@ -1173,7 +1173,7 @@
             "cve_url": "https://www.cve.org/CVERecord?id=CVE-2024-4603",
             "in_cisa_kev": false,
             "epss_score": 0.01131,
-            "epss_percentile": 65.1,
+            "epss_percentile": 65.2,
             "reachability": "Guarded: DSA parameters are rarely utilized in modern Python TLS client/server configurations."
           },
           {
@@ -1181,7 +1181,7 @@
             "cve_url": "https://www.cve.org/CVERecord?id=CVE-2024-4741",
             "in_cisa_kev": false,
             "epss_score": 0.02925,
-            "epss_percentile": 86.5,
+            "epss_percentile": 86.6,
             "reachability": "Guarded: CPython socket wrappers manage SSL buffer allocation lifecycles safely."
           }
         ],
@@ -1282,7 +1282,7 @@
           "url": "https://www.cve.org/CVERecord?id=CVE-2024-0397",
           "summary": "Race condition in CPython ssl module certificate store manipulation leading to memory corruption or crashes under multithreaded load.",
           "epss_score": 0.0081,
-          "epss_percentile": 55.2,
+          "epss_percentile": 55.4,
           "in_cisa_kev": false,
           "mitre_rating": null,
           "scope": "host"
@@ -1295,7 +1295,7 @@
           "url": "https://www.cve.org/CVERecord?id=CVE-2023-40217",
           "summary": "TLS handshake bypass vulnerability in ssl socket handling where closing before handshake completion could leak unencrypted buffers.",
           "epss_score": 0.00797,
-          "epss_percentile": 54.8,
+          "epss_percentile": 54.9,
           "in_cisa_kev": false,
           "mitre_rating": null,
           "scope": "host"
@@ -1321,7 +1321,7 @@
           "url": "https://www.cve.org/CVERecord?id=CVE-2024-4603",
           "summary": "Denial of service via excessive computational resource consumption during validation of overly long DSA keys in OpenSSL.",
           "epss_score": 0.01131,
-          "epss_percentile": 65.1,
+          "epss_percentile": 65.2,
           "in_cisa_kev": false,
           "mitre_rating": null,
           "scope": "target"
@@ -1334,7 +1334,7 @@
           "url": "https://www.cve.org/CVERecord?id=CVE-2024-4741",
           "summary": "Use-after-free vulnerability in OpenSSL when freeing buffers after handling incoming TLS network traffic.",
           "epss_score": 0.02925,
-          "epss_percentile": 86.5,
+          "epss_percentile": 86.6,
           "in_cisa_kev": false,
           "mitre_rating": null,
           "scope": "target"
