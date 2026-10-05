@@ -339,7 +339,7 @@
           "purl": "pkg:golang/gopkg.in/yaml.v2@v2.4.0"
         }
       ],
-      "cataloged_at": "2026-10-04T02:00:24.190952+00:00"
+      "cataloged_at": "2026-10-05T02:00:19.406766+00:00"
     },
     {
       "slug": "openssl-in-nodejs-22",
@@ -661,7 +661,7 @@
           "purl": "pkg:generic/libcrypto.so.3@3.0.x"
         }
       ],
-      "cataloged_at": "2026-10-04T02:00:24.861530+00:00"
+      "cataloged_at": "2026-10-05T02:00:19.860900+00:00"
     },
     {
       "slug": "openssl-in-python-3-12",
@@ -983,7 +983,7 @@
           "purl": "pkg:generic/libcrypto.so.3@3.0.x"
         }
       ],
-      "cataloged_at": "2026-10-04T02:00:25.187817+00:00"
+      "cataloged_at": "2026-10-05T02:00:20.274103+00:00"
     }
   ],
   "total_queries": 3
